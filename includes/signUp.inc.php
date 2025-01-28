@@ -44,6 +44,3 @@ else{
     header('Location:../signIn.php');
     exit;
 } 
-
-        
-

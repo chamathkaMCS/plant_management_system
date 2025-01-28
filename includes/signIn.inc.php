@@ -6,9 +6,9 @@ if (isset($_POST["submit"])){
         require_once 'conn.inc.php';
         require_once 'functions.inc.php';
 
-        $signinEmpty = signinEmptyCheck($companyUsername,$password);
+        $signInEmpty = signinEmptyCheck($companyUsername,$password);
 
-        if($signinEmpty !== false){
+        if($signInEmpty !== false){
             header("Location:../signIn.php?error=emptyInputs");
             exit;
         }

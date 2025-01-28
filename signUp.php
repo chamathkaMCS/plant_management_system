@@ -8,7 +8,7 @@
 <h1 class="no1"style="font-size:30px;margin-top:-30px;">Plant Management System</h1>
     <div class="loginPopup">
         <div class="formContainer">
-        <form action="include/signUp.inc.php" method="post">
+        <form action="includes/signUp.inc.php" method="post">
 
             <input type="text" id="companyName" name="companyName" placeholder="Company Name">
             <input type="text" id="companyEmail" name="companyEmail" placeholder="Company Email">

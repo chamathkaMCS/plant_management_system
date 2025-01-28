@@ -10,7 +10,7 @@ function signinEmptyCheck($companyUsername,$password){
 }
 function logUser($conn,$companyUsername,$password){
     $result;
-    $userExists = userExists($companyUsername,$companyUsername);
+    $userExists = userExists($conn,$companyUsername,$companyUsername);
 
     if($userExists === False){
         header("Location:../signIn.php?error=userDosentExists");
@@ -53,14 +53,14 @@ function invalidUsername($username){
         $result = false;
     }
 }
-function userExists($companyEmail,$companyName){
+function userExists($conn,$companyEmail,$companyName){
     $sql = "SELECT*FROM companyLogin WHERE companyEmail =? OR companyUsername = ?;";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt,$sql)){
         header("Location:../signUp.php?error=stmtFailed");
         exit;
     }
-    mysqli_stmt_bind_param($stmt,"ss",$companyEmail,$companyUsername;);
+    mysqli_stmt_bind_param($stmt,"ss",$companyEmail,$companyUsername);
     mysqli_stmt_execute($stmt);
 
     $resultRow = mysqli_stmt_get_result($stmt);
@@ -89,7 +89,7 @@ function CreteUser($conn,$companyName,$companyEmail,$companyUsername,$password,$
         exit;
     }
     $passwordHashed = password_hashe($password,PASSWORD_DEFAULT);
-    mysqli_stmt_bind_param($stmt,"ssss",$companyName,$companyEmail,$companyUsername,$passwordHashed;);
+    mysqli_stmt_bind_param($stmt,"ssss",$companyName,$companyEmail,$companyUsername,$passwordHashed);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     header("Locaion:../home.php");

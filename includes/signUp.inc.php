@@ -42,7 +42,5 @@ else{
     exit;
 }
 
-$companyName,$companyEmail,$userName,$password,$repeatPassword
-
         
 

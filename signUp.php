@@ -12,7 +12,7 @@
 
             <input type="text" id="companyName" name="companyName" placeholder="Company Name">
             <input type="text" id="companyEmail" name="companyEmail" placeholder="Company Email">
-            <input type="text" id="userName" name="username" placeholder="Company Username">
+            <input type="text" id="companyUsername" name="companyUsername" placeholder="Company Username">
             <input type="password" id="password" name="password" placeholder="Password">
             <input type="password" id="repeatPassword" name="repeatPassword" placeholder="Confirm Password">
         

@@ -11,10 +11,10 @@
 </br>
 <div class="holder">
     <li><div class="myButton1" >
-            <a class="fill-div" href="signInPopup.php" >Sign in</a>
+            <a class="fill-div" href="signIn.php" >Sign in</a>
     </div></li>
     <li><div class="myButton1"style="float:right;">
-            <a class="fill-div" href="signUpPopup.php">Sign up</a>
+            <a class="fill-div" href="signUp.php">Sign up</a>
     </div></li>
 </div>
 </div>

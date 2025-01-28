@@ -9,8 +9,8 @@
     <h1 class="no1"style="font-size:30px;margin-top:-30px;">Plant Management System</h1>
     <div class="loginPopup">
         <div class="formContainer">
-        <form action="include/signIn.inc.php" method="post">
-            <input type="text" id="userName" name="companyUsername" placeholder="Email/Username">
+        <form action="includes/signIn.inc.php" method="post">
+            <input type="text" id="username" name="companyUsername" placeholder="Email/Username">
             <input type="password" id="password" name="password" placeholder="password">
             
             <input type="submit" value="Submit" name="submit">

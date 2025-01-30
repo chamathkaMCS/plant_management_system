@@ -25,9 +25,6 @@ if (isset($_POST["submit"])){
         }elseif($invalidUsername !== false){
             header("Location:../signUp.php?error=invalidUsername");
             exit;
-        }elseif($invalidPassword !== false){
-            header("Location:../signUp.php?error=invalidPassword");
-            exit;
         }elseif($userExists !== false){
             header("Location:../signUp.php?error=userExists");
             exit;
@@ -35,9 +32,6 @@ if (isset($_POST["submit"])){
             header("Location:../signUp.php?error=passwordDosentMatch");
             exit;
         }
-
-
-
         CreteUser($conn,$companyName,$companyEmail,$username,$password,$repeatPassword);
 }
 else{

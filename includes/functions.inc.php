@@ -9,9 +9,7 @@ function signinEmptyCheck($companyUsername,$password){
     }
 }
 function logUser($conn,$companyUsername,$password){
-    $result;
     $userExists = userExists($conn,$companyUsername,$companyUsername);
-
     if($userExists === False){
         header("Location:../signIn.php?error=userDosentExists");
         exit;
@@ -27,7 +25,6 @@ function logUser($conn,$companyUsername,$password){
         $_SESSION["userid"] = $userExists["companyUserId"];
         $_SESSION["username"] =$userExists["companyUsername"];
     }
-    
 }
 function signUpEmptyCheck($companyName,$companyEmail,$username,$password,$repeatPassword){
     $result;

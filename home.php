@@ -11,11 +11,12 @@
         <h1 style="font-size:40px;font-family:roboto;">Friday<h3>
     </div>
     <div class="homepageContainer03" >
-        <button class="cards">Event 01</button>
-        <button class="cards">Plant Details</button>
-        <button class="cards">Plant Details</button>
-        <button class="cards">Plant Details</button>
-        <button class="cards">Plant Details</button>
+        <button class="cards"><h1>Event 01</h1><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci cum, quibusdam maxime rem dolorum laboriosam unde incidunt recusandae labore tenetur.</p></button>
+        <button class="cards"><h1>Event 01</h1><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci cum, quibusdam maxime rem dolorum laboriosam unde incidunt recusandae labore tenetur.</p></button>
+        <button class="cards"><h1>Event 01</h1><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci cum, quibusdam maxime rem dolorum laboriosam unde incidunt recusandae labore tenetur.</p></button>
+        <button class="cards"><h1>Event 01</h1><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci cum, quibusdam maxime rem dolorum laboriosam unde incidunt recusandae labore tenetur.</p></button>
+        <button class="cards"><h1>Event 01</h1><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci cum, quibusdam maxime rem dolorum laboriosam unde incidunt recusandae labore tenetur.</p></button>
+        <button class="cards"><h1>Event 01</h1><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci cum, quibusdam maxime rem dolorum laboriosam unde incidunt recusandae labore tenetur.</p></button>
 
     </div>
 

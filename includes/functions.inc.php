@@ -7,6 +7,7 @@ function signinEmptyCheck($companyUsername,$password){
     }else{
         $result = false;
     }
+    return $result;
 }
 function logUser($conn,$companyUsername,$password){
     $userExists = userExists($conn,$companyUsername,$companyUsername);
@@ -26,13 +27,14 @@ function logUser($conn,$companyUsername,$password){
         $_SESSION["username"] =$userExists["companyUsername"];
     }
 }
-function signUpEmptyCheck($companyName,$companyEmail,$username,$password,$repeatPassword){
+function signUpEmptyCheck($companyName,$companyEmail,$companyUsername,$password,$repeatPassword){
     $result;
-    if(empty($companyName) || empty($companyEmail) || empty($username) || empty($password) || empty($repeatPassword)){
+    if(empty($companyName) || empty($companyEmail) || empty($companyUsername) || empty($password) || empty($repeatPassword)){
         $result = true;
     }else{
         $result = false;
     }
+    return $result;
 }
 function invalidEmail($companyEmail){
     $result;
@@ -41,6 +43,7 @@ function invalidEmail($companyEmail){
     }else{
         $result = false;
     }
+    return $result;
 }
 function invalidUsername($username){
     $result;
@@ -49,9 +52,10 @@ function invalidUsername($username){
     }else{
         $result = false;
     }
+    return $result;
 }
-function userExists($conn,$companyEmail,$companyName){
-    $sql = "SELECT*FROM companyLogin WHERE companyEmail =? OR companyUsername = ?;";
+function userExists($conn,$companyEmail,$companyUsername){
+    $sql = "SELECT*FROM company_login WHERE companyEmail =? OR companyUsername = ?;";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt,$sql)){
         header("Location:../signUp.php?error=stmtFailed");
@@ -76,18 +80,19 @@ function passwordDosentMatch($password,$repeatPassword){
     }else{
         $result = false;
     }
+    return $result;
 }
 function CreteUser($conn,$companyName,$companyEmail,$companyUsername,$password,$repeatPassword){
-    $sql = "INSERT*INTO companyLogin(companyName,companyEmail,comapnyUsername,password) VALUES (?,?,?,?);";
+    $sql = "INSERT INTO company_login(companyName,companyEmail,companyUsername,password) VALUES (?,?,?,?);";
     $stmt = mysqli_stmt_init($conn);
 
     if(!mysqli_stmt_prepare($stmt,$sql)){
         header("Location:../signUp.php?error=stmtFailed");
         exit;
     }
-    $passwordHashed = password_hashe($password,PASSWORD_DEFAULT);
+    $passwordHashed = password_hash($password,PASSWORD_DEFAULT);
     mysqli_stmt_bind_param($stmt,"ssss",$companyName,$companyEmail,$companyUsername,$passwordHashed);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-    header("Locaion:../home.php");
+    header("Location:../home.php");
 }

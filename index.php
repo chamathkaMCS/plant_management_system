@@ -5,9 +5,7 @@
     include_once 'footer.php';?>
 
 <div class="bodycontainer">
-    <div class="container3">
-        <img src="images/logo.jpg" style="width:100%;height:100%;">
-    </div>
+        <img src="images/logo.jpg" style="width:50vh;height:50vh;">
 </br>
 <div class="holder">
     <li><div class="myButton1" >

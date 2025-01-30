@@ -3,7 +3,7 @@
     include_once 'styles.php';
     include_once 'footer.php';?>
 
-<body style="background-color:rgba(209, 252, 212, 0.43);">
+<body class="body-style-1">
 <div style="margin-top:350px;">
     <h1 class="no1" style="font-size:50px;margin-top:-90px;">Welcome to the </h1>
     <h1 class="no1"style="font-size:30px;margin-top:-30px;">Plant Management System</h1>
@@ -20,8 +20,3 @@
 </div>
     </div>
 </div>
-<div class="footer">
-<h1 class="no3">all writes received @MCS_Designers contact - +94 71 48 666 30</h1>
-</div>
-</body>
-</html>

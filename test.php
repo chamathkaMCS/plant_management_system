@@ -3,129 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form Popup</title>
+    <title>Hover Button with Animation</title>
     <style>
-        /* Basic styling for the form popup */
-        .form-popup {
-            display: none; /* Hidden by default */
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border: 1px solid #ccc;
-            z-index: 9;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 100%;
-            max-width: 400px;
-        }
-
-        .form-container {
-            width: 100%;
-            max-width: 400px;
-        }
-
-        /* Input fields */
-        input[type="text"], input[type="password"] {
-            width: 100%;
-            padding: 15px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        /* Buttons */
-        .btn {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-            margin: 5px 0;
-        }
-
-        .btn:hover {
-            background-color: #45a049;
-        }
-
-        .cancel {
-            background-color: red;
-        }
-
-        .cancel:hover {
-            background-color: #cc0000;
-        }
-
-        /* Rounded image for login icon */
-        .roundedImage {
-            border-radius: 50%;
-            cursor: pointer;
-        }
-
-        /* Hide the checkbox and label */
-        .login-toggle {
-            display: none;
-        }
-
-        /* Label that works as the login icon */
-        .login-toggle-label {
+        .button-container {
+            position: relative;
             display: inline-block;
+        }
+
+        .settings-button {
+            background: none;
+            border: none;
             cursor: pointer;
+            padding: 10px;
         }
 
-        /* When checkbox is checked, show the form */
-        .login-toggle:checked + .form-popup {
-            display: block;
-        }
-
-        /* Style for the close button */
-        .close-btn {
+        .tooltip {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-            color: #fff;
-            font-size: 20px;
-            font-weight: bold;
+            top: 50%;
+            left: 120%;
+            transform: translateY(-50%);
+            background: black;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
         }
 
-        /* Hide the close button initially */
-        .close-btn {
-            display: none;
+        /* Hover Effect - Animate Left to Right */
+        .button-container:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+            animation: slideRight 0.4s ease forwards;
         }
 
-        /* Show the close button when form is visible */
-        .login-toggle:checked + .form-popup .close-btn {
-            display: block;
+        /* Keyframes for the sliding effect */
+        @keyframes slideRight {
+            from {
+                transform: translateY(-50%) translateX(-10px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(-50%) translateX(0);
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
 
-<!-- Checkbox toggle for form visibility -->
-<input type="checkbox" class="login-toggle" id="loginToggle">
-<label for="loginToggle" class="login-toggle-label">
-    <img class="roundedImage" src="images/loginIcon.png" style="height:50px;width:50px;padding:10px;float:right;">
-</label>
-
-<!-- Popup form -->
-<div class="form-popup">
-    <!-- Close button that will hide the form -->
-    <label for="loginToggle" class="close-btn">X</label>
-    <form action="/action_page.php" method="POST" class="form-container">
-        <h1>Login</h1>
-
-        <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" required>
-
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
-
-        <button type="submit" class="btn">Login</button>
-    </form>
+<div class="button-container">
+    <button class="settings-button">
+        <img src="settings.svg" alt="Settings" width="24" height="24">
+    </button>
+    <span class="tooltip">Settings</span>
 </div>
 
 </body>

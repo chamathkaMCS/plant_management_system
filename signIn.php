@@ -13,8 +13,17 @@
             <input type="text" id="username" name="companyUsername" placeholder="Email/Username">
             <input type="password" id="password" name="password" placeholder="password">
             
-            <input type="submit" value="Submit" name="submit">
+            <input type="submit" value="Login" name="submit">
 
+        <?php
+            if(isset($_GET["error"])){
+                if($_GET["error"] == "emptyInputs"){
+                    echo '<div class="error"> Fill all the Fields</div>';
+                }elseif($_GET["error"] == "wrongPassword"){
+                    echo '<div class="error"> Wrong Password</div>';
+                }
+            }
+        ?>
         </form>
                 <p>New to here <a href="signUp.php">Register</a></p>
 </div>

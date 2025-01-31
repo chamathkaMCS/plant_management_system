@@ -12,7 +12,6 @@
         min-height: 99vh;
         justify-content:center;
         flex-wrap:wrap;
-        overflow-y:scroll;
     }
     .body-style-1{
         background:rgba(209, 252, 212, 0.43)
@@ -156,7 +155,29 @@
         color: #000;;
         margin:auto;
         font-family:arial;
-        
+    }
+    .date{
+        font-size:120px;
+        font-family:roboto;
+        color:rgb(21, 143, 7);
+        margin:auto;
+        padding-top:10px;
+        width:100%;
+    }
+    .time{
+        font-size:40px;
+        font-family:roboto;
+        margin:auto;
+        padding-top:10px;
+        width:100%;
+    }
+    .day{
+        font-size:20px;
+        font-family:roboto;
+        color:rgb(21, 143, 7);
+        margin:auto;
+        padding-top:10px;
+        width:100%;
     }
     .toWatered{
         position:relative;
@@ -254,13 +275,13 @@
     }
     .homepageContainer03{
         display:flex;
-        align-self:flex-start;
+        align-self:center;
         justify-content:space-evenly;
         margin-top:50px;
         border-radius:5px;
         background-color:rgba(255, 255, 255, 0);
         width:98%;
-        overflow:scroll;
+        height:420px;
         transition:all 1s ease;
     }
     .homepageContainer04{
@@ -275,9 +296,25 @@
         transition:all 1s ease;
     }
     .cards{
+        display:flex;
+        border-radius:5px;
         width:300px;
         height:400px;
+        align-items:flex-end;
+        flex-wrap:wrap;
+        border:0;
+        background-color:white;
     }
+    .cards:hover{
+        background-color:rgb(21, 107, 11);
+        transform:scale(1.02);
+        transition:all 0.5s ease;
+        color:white;
+    }
+    .cards:hover h1.date,
+    .cards:hover h1.day {
+            color: rgb(5, 32, 3);
+        }
     .pageButtons{
         width:300px;
         height:250px;
@@ -351,10 +388,10 @@
         padding: 20px;
     }
     .error{
-        width:wrap;
+        display:flex;
+        align-items:center;
+        justify-content:center;
         margin-bottom:20px;
-        padding-top:15px;
-        padding-bottom:-5px;
         height:40px;
         background-color:rgb(255, 245, 245);
         border-style: solid;
@@ -368,17 +405,17 @@
         text-shadow: 1px 1px rgba(250,250,250,.3);
     }
     .done{
-        width:wrap;
+        display:flex;
+        align-items:center;
+        justify-content:center;
         margin-bottom:20px;
-        padding-top:15px;
-        padding-bottom:-5px;
         height:40px;
-        background-color:rgb(248, 255, 245);
+        background-color:rgb(245, 255, 245);
         border-style: solid;
-        border-color: rgba(0, 255, 64, 0.24);
+        border-color: rgba(0, 255, 0, 0.24);
         border-radius:5px;
         border-width:1px;
-        color:rgb(0, 204, 61);
+        color:rgb(0, 204, 51);
         font-family: Helvetica, Arial, sans-serif;
         font-size: 13px;
         font-weight: bold;
@@ -391,5 +428,35 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
-
+    .adminViewIcon{
+        opacity: 1;
+        width:40px;
+        height:40px;
+        border-radius:100%;
+        border:0;
+        background-color:rgb(16, 95, 16);
+        color:rgba(0,0,0,0);
+    }
+    .adminViewIcon:hover{
+        opacity: 0;
+    }
+    .adminViewLabel{
+        opacity: 0;
+        width:30px;
+        height:40px;
+        color:rgba(16, 95, 16, 0);
+        transition:all 0.2s ease;
+        overflow:hidden;
+        font-family:arial;
+        font-weight:bold;
+        background-color:rgb(16, 95, 16);
+        border-radius:5px 20px 20px 5px;
+        border:0;
+    }
+    .adminViewLabel:hover{
+        opacity: 1;
+        width:170px;
+        height:40px;
+        color:white;
+    }
 </style>

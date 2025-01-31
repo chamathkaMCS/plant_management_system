@@ -12,15 +12,15 @@ if (isset($_POST["submit"])){
         $signUpEmpty = signUpEmptyCheck($companyName,$companyEmail,$companyUsername,$password,$repeatPassword);
         $invalidEmail = invalidEmail($companyEmail);
         $invalidUsername = invalidUsername($companyUsername);
-        $userExists = userExists($companyEmail,$companyUsername);
+        $userExists = userExists($conn,$companyEmail,$companyUsername);
         $passwordDosentMatch = passwordDosentMatch($password,$repeatPassword);
 
 
-        if($signUpNotEmpty !== false){
+        if($signUpEmpty !== false){
             header("Location:../signUp.php?error=emptyInputs");
             exit;
         }elseif($invalidEmail !== false){
-            header("Location:../signUp.php?error=InvalidEmail");
+            header("Location:../signUp.php?error=invalidEmail");
             exit;
         }elseif($invalidUsername !== false){
             header("Location:../signUp.php?error=invalidUsername");
@@ -32,7 +32,7 @@ if (isset($_POST["submit"])){
             header("Location:../signUp.php?error=passwordDosentMatch");
             exit;
         }
-        CreteUser($conn,$companyName,$companyEmail,$username,$password,$repeatPassword);
+        CreateUser($conn,$companyName,$companyEmail,$username,$password,$repeatPassword);
 }
 else{
     header('Location:../signIn.php');

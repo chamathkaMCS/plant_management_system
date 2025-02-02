@@ -32,7 +32,7 @@ if (isset($_POST["submit"])){
             header("Location:../signUp.php?error=passwordDosentMatch");
             exit;
         }
-        CreateUser($conn,$companyName,$companyEmail,$username,$password,$repeatPassword);
+        createUser($conn,$companyName,$companyEmail,$companyUsername,$password,$repeatPassword);
 }
 else{
     header('Location:../signIn.php');

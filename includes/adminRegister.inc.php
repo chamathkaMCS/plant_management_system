@@ -34,7 +34,7 @@ if (isset($_POST["submit"])){
             header("Location:../adminRegister.php?error=passwordDosentMatch");
             exit;
         }
-        CreateAdmin($conn,$companyUserid,$adminUsername,$password);
+        createAdmin($conn,$companyUserid,$adminUsername,$password);
 }
 else{
     header('Location:../adminRegister.php');

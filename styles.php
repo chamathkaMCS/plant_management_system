@@ -314,7 +314,7 @@
     .cards:hover h1.date,
     .cards:hover h1.day {
             color: rgb(5, 32, 3);
-        }
+    }
     .pageButtons{
         width:300px;
         height:250px;
@@ -339,7 +339,50 @@
         transform:scale(1.05);
         transition:all 0.2s ease;
     }
+    .adminViewIcon{
+        opacity: 1;
+        width:40px;
+        height:40px;
+        border-radius:100%;
+        border:0;
+        background-color:rgb(16, 95, 16);
+        color:rgba(0,0,0,0);
+    }
+    .adminViewIcon:hover{
+        opacity: 0;
+    }
+    .adminViewLabel{
+        opacity: 0;
+        width:30px;
+        height:40px;
+        color:rgba(16, 95, 16, 0);
+        transition:all 0.2s ease;
+        overflow:hidden;
+        font-family:arial;
+        font-weight:bold;
+        background-color:rgb(16, 95, 16);
+        border-radius:5px 20px 20px 5px;
+        border:0;
+    }
+    .adminViewLabel:hover{
+        opacity: 1;
+        width:170px;
+        height:40px;
+        color:white;
+    }
+    .adminAction{
+        width:170px;
+        height:40px;
+        color:white;
+        overflow:hidden;
+        font-family:arial;
+        font-weight:bold;
+        background-color:rgb(16, 95, 16);
+        border-radius:5px;
+        border:0;
+        transition:all 0.2s ease;
 
+    }
 
 
 /* form CSS */
@@ -428,35 +471,17 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
-    .adminViewIcon{
-        opacity: 1;
-        width:40px;
-        height:40px;
-        border-radius:100%;
-        border:0;
-        background-color:rgb(16, 95, 16);
-        color:rgba(0,0,0,0);
-    }
-    .adminViewIcon:hover{
-        opacity: 0;
-    }
-    .adminViewLabel{
-        opacity: 0;
-        width:30px;
-        height:40px;
-        color:rgba(16, 95, 16, 0);
-        transition:all 0.2s ease;
-        overflow:hidden;
-        font-family:arial;
-        font-weight:bold;
-        background-color:rgb(16, 95, 16);
-        border-radius:5px 20px 20px 5px;
-        border:0;
-    }
-    .adminViewLabel:hover{
-        opacity: 1;
-        width:170px;
-        height:40px;
-        color:white;
-    }
+    .open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
 </style>

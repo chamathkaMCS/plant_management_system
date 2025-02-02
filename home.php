@@ -9,17 +9,37 @@
         <h1 id="time"style="font-size:90px;font-family:roboto;color:rgb(21, 143, 7);"><?php date_default_timezone_set("Asia/Colombo"); echo date("H:i")?></h1>
         <h1 style="font-size:20px;font-family:roboto;"><?php echo date("Y.m.d")?></h1>
         <h1 style="font-size:40px;font-family:roboto;"><?php echo date("l")?><h3>
-        <div style="position:absolute;top:130px;right:25px;">
-            <a href="includes/adminRegister.inc.php">
-            <!-- <img class="adminViewIcon"src="images/tools black.svg"> -->
-            <button class="adminViewIcon"><img style="width:65%;height:65%;"src="images/tools.png"></button>
-            </a>
-        </div>
-        <div style="position:absolute;top:130px;right:25px;">
-            <a href="includes/adminRegister.inc.php">
-            <button class="adminViewLabel">Acsess As Admin</button>
-            </a>
-        </div>
+
+    <?php
+        if(isset($_GET["admin"])){
+            if($_GET["admin"] == "newCompany"){
+                echo <<<HTML
+                <div style="position:absolute;top:130px;right:25px;">
+                    <a href="includes/adminRegister.inc.php">
+                    <button class="adminAction">Exit Admin View</button>
+                    </a>
+                </div>
+                <div style="position:absolute;top:130px;right:200px">
+                    <a href="#">
+                    <button class="adminAction">Create/Delete Admin</button>
+                    </a>
+                </div>
+            HTML;
+            }elseif($_GET["admin"] == "exitingexitingCompany"){
+                echo <<<HTML
+                    <div style="position:absolute;top:130px;right:25px;">
+                        <button class="adminViewIcon"><img style="width:65%;height:65%;" src="images/tools.png"></button>
+                    </div>
+                    <div style="position:absolute;top:130px;right:25px;">
+                        <a href="includes/adminLogin.inc.php">
+                        <button class="adminViewLabel">Access As Admin</button>
+                        </a>
+                    </div>
+                    HTML;
+            }
+        }
+        ?>
+
     </div>
     <div class="homepageContainer03" >
         <button class="cards" onclick="window.location.href='plantInventory.php';">

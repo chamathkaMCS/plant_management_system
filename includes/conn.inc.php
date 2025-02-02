@@ -1,7 +1,7 @@
 <?php
 $serverName ="localhost";
-$dbUsername = "plantManagement";
-$dbPassword = "d9/niFZqt4meK]UE";
+$dbUsername = "chamathka";
+$dbPassword = "O8g(Ttj2!1i[YU*K";
 $dbName = "plant_management_system";
 
 $conn = mysqli_connect($serverName,$dbUsername,$dbPassword,$dbName);

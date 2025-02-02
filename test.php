@@ -1,65 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hover Button with Animation</title>
-    <style>
-        .button-container {
-            position: relative;
-            display: inline-block;
-        }
+<?php
+    include_once 'indexHeader.php';
+    include_once 'styles.php';
+    include_once 'loginHeader.php';
+    include_once 'footer.php';?>
 
-        .settings-button {
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 10px;
-        }
 
-        .tooltip {
-            position: absolute;
-            top: 50%;
-            left: 120%;
-            transform: translateY(-50%);
-            background: black;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            white-space: nowrap;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-
-        /* Hover Effect - Animate Left to Right */
-        .button-container:hover .tooltip {
-            opacity: 1;
-            visibility: visible;
-            animation: slideRight 0.4s ease forwards;
-        }
-
-        /* Keyframes for the sliding effect */
-        @keyframes slideRight {
-            from {
-                transform: translateY(-50%) translateX(-10px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(-50%) translateX(0);
-                opacity: 1;
-            }
-        }
-    </style>
-</head>
-<body>
-
-<div class="button-container">
-    <button class="settings-button">
-        <img src="settings.svg" alt="Settings" width="24" height="24">
-    </button>
-    <span class="tooltip">Settings</span>
+<div style="position:absolute;top:130px;right:25px;">
+  <a href="includes/adminRegister.inc.php">
+    <button class="adminViewIcon"><img style="width:65%;height:65%;"src="images/tools.png"></button>
+  </a>
+</div>
+ <div style="position:absolute;top:130px;right:25px;">
+  <a href="includes/adminRegister.inc.php">
+    <button class="adminViewLabel">Acsess As Admin</button>
+  </a>
 </div>
 
-</body>
-</html>
+<div style="position:absolute;top:130px;right:25px;">
+  <a href="#">
+    <button class="adminAction">Exit Admin View</button>
+  </a>
+</div>
+<div style="position:absolute;top:130px;right:200px">
+  <a href="#">
+    <button class="adminAction">Create/Delete Admin</button>
+  </a>
+</div>
+
+
+<?php
+        if(isset($_SESSION["adminid"])){
+            echo <<<HTML
+            <div style="position:absolute;top:130px;right:25px;">
+                    <button class="adminViewIcon"><img style="width:65%;height:65%;" src="images/tools.png"></button>
+            </div>
+            <div style="position:absolute;top:130px;right:25px;">
+                <a href="includes/adminLogin.inc.php">
+                    <button class="adminViewLabel">Access As Admin</button>
+                </a>
+            </div>
+            HTML;
+        }
+        else{
+            echo <<<HTML
+            <div style="position:absolute;top:130px;right:25px;">
+                <a href="includes/adminRegister.inc.php">
+                    <button class="adminAction">Exit Admin View</button>
+                </a>
+                </div>
+            <div style="position:absolute;top:130px;right:200px">
+                <a href="#">
+                    <button class="adminAction">Create/Delete Admin</button>
+                </a>
+            </div>
+            HTML;
+        }
+        ?>

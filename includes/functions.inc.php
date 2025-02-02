@@ -83,7 +83,7 @@ function passwordDosentMatch($password,$repeatPassword){
     }
     return $result;
 }
-function CreateUser($conn,$companyName,$companyEmail,$companyUsername,$password,$repeatPassword){
+function createUser($conn,$companyName,$companyEmail,$companyUsername,$password,$repeatPassword){
     $sql = "INSERT INTO company_login(companyName,companyEmail,companyUsername,password) VALUES (?,?,?,?);";
     $stmt = mysqli_stmt_init($conn);
 
@@ -96,6 +96,10 @@ function CreateUser($conn,$companyName,$companyEmail,$companyUsername,$password,
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     header("Location:../home.php");
+    session_start();
+    $_SESSION["userid"] = $userExists["companyUserid"];
+    $_SESSION["username"] =$userExists["companyUsername"];
+    $_SESSION["companyName"] =$userExists["companyName"];
 }
 function logAdmin($conn,$adminUsername,$password){
     $userExists = adminExists($conn,$companyUserid,$adminUsername,$adminUsername);
@@ -115,7 +119,7 @@ function logAdmin($conn,$adminUsername,$password){
         $_SESSION["username"] =$userExists["companyUsername"];
         $_SESSION["companyName"] =$userExists["companyName"];
         $_SESSION["adminid"] = $userExists["adminId"];
-        $_SESSION["adminName"] =$userExists["adminName"];
+        $_SESSION["adminEmail"] =$userExists["adminEmail"];
         $_SESSION["adminUsername"] =$userExists["adminUsername"];
         header("Location:../adminRegister.php?error=loginSuccessfully");
     }
@@ -167,7 +171,7 @@ function adminRegisterEmptyCheck($adminEmail,$adminUsername,$password,$passwordR
     }
     return $result;
 }
-function CreateAdmin($conn,$companyUserid,$adminUsername,$password){
+function createAdmin($conn,$companyUserid,$adminUsername,$password){
     $sql = "INSERT INTO admin_details(companyUserid,adminUsername,adminPassword) VALUES (?,?,?);";
     $stmt = mysqli_stmt_init($conn);
 

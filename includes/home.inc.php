@@ -1,19 +1,18 @@
 <?php
-if (isset($_POST["submit"])){
-        $companyUserid = $_SESSION["userid"];
+    session_start();
+    $companyUserid = $_SESSION["userid"];
+    $adminEmail = $_SESSION["adminEmail"];
+    $adminUsername = $_SESSION["adminUsername"];
 
-        require_once 'conn.inc.php';
-        require_once 'functions.inc.php';
+    require_once 'conn.inc.php';
+    require_once 'functions.inc.php';
 
-        $signInEmpty = signinEmptyCheck($companyUsername,$password);
+    $adminExists = adminExists($conn,$companyUserid,$adminEmail,$adminUsername)
 
-        if($signInEmpty !== false){
-            header("Location:../signIn.php?error=emptyInputs");
-            exit;
-        }
-        LogUser($conn,$companyUsername,$password);
-}
-else{
-    header('Location:../signin.php');
-    exit;
-}
+    if($adminExists !== false){
+        header("Location:../home.php?admin=newCompany");
+        exit;
+    }else{
+        header("Location:../home.php?admin=exitingCompany");
+        exit;
+    }

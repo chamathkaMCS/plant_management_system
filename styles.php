@@ -295,6 +295,17 @@
         flex-wrap:wrap;
         transition:all 1s ease;
     }
+    .homepageContainer05{
+        display:flex;
+        justify-content:center;
+        border-radius:5px;
+        margin-top:120px;
+        background-color:rgba(255, 255, 255, 0);
+        width:200px;
+        height:80px;
+        flex-wrap:wrap;
+        transition:all 1s ease;
+    }
     .cards{
         display:flex;
         border-radius:5px;
@@ -384,9 +395,50 @@
     }
     .adminAction:hover{
         background-color:rgb(7, 65, 7);
-        
     }
+    .plantCardHolder{
+        display:flex;
+        flex-wrap:wrap;
+        width:98vw;
+        padding:20px;
+        align-self:flex-end;
+        margin-bottom:41px;
+        overflow-y:scroll;
+        gap:40px;
+        align-items:space-evenly;
+        justify-items:space-evenly;
+        height:71vh;
+        /* height:81vh; */
+        /* background-color:red; */
+    }
+    .plantCard{
+        display:flex;
+        height:250px;
+        width:200px;
+        border-radius: 10px;
+        background-color:rgba(3, 126, 3, 0.56);
+        box-shadow: 1px 1px 20px rgb(216, 213, 213);
+        flex-wrap:wrap;
+        transition:all 0.5s ease;
+        z-index:1;
+    }
+    .plantCard:hover{
+        transform:scale(1.05);
+        z-index:1;
 
+    }
+    .plantCardImg{
+        border-radius: 10px 10px 0px 0px;
+        height:200px;
+        width:100%;
+    }
+    .plantCardName{
+        font-size:20px;
+        font-family:"roboto",serif;
+        color:rgb(255, 255, 255);
+        margin:auto;
+        margin-bottom:15px;
+    }
 /* form CSS */
     label{
         float:left;

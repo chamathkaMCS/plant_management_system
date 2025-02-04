@@ -2,68 +2,14 @@
     include_once 'indexHeader.php';
     include_once 'styles.php';
     include_once 'loginHeader.php';
-    include_once 'footer.php';?>
+    include_once 'footer.php';
+    include_once 'adminLoginStatus.php'?>
 
 <body class="body-style-1">
     <div class="homepageContainer04" >
         <h1 id="time"style="font-size:90px;font-family:roboto;color:rgb(21, 143, 7);"><?php date_default_timezone_set("Asia/Colombo"); echo date("H:i")?></h1>
         <h1 style="font-size:20px;font-family:roboto;"><?php echo date("Y.m.d")?></h1>
         <h1 style="font-size:40px;font-family:roboto;"><?php echo date("l")?><h3>
-
-    <?php
-
-        require_once 'includes/conn.inc.php';
-        require_once 'includes/functions.inc.php';
-
-        $companyUserid = $_SESSION["userid"];
-        $companyAdminExists = companyAdminExists($conn,$companyUserid);
-        
-     if($companyAdminExists !== false){
-        if(isset($_SESSION["adminId"])){
-            echo <<<HTML
-            <div style="position:absolute;top:130px;right:25px;">
-                <a href="includes/adminLogout.inc.php">
-                    <button class="adminAction">Close Admin view</button>
-                </a>
-                </div>
-            <div style="position:absolute;top:130px;right:200px">
-                <a href="adminRegister.php">
-                    <button class="adminAction">Create / Delete Admin</button>
-                </a>
-            </div>
-            HTML;
-        }
-        else{
-            echo <<<HTML
-            <div style="position:absolute;top:130px;right:25px;">
-                <a href="adminLogin.php">
-                    <button class="adminAction">Open Admin view</button>
-                </a>
-                </div>
-            <div style="position:absolute;top:130px;right:200px">
-                <a href="includes/logout.inc.php">
-                    <button class="adminAction">Logout</button>
-                </a>
-            </div>
-            HTML;
-        }
-        
-    }elseif($companyAdminExists !== true ){
-        echo <<<HTML
-        <div style="position:absolute;top:130px;right:25px;">
-            <a href="adminRegister.php">
-                <button class="adminAction">Create Admin</button>
-            </a>
-            </div>
-        <div style="position:absolute;top:130px;right:200px">
-            <a href="includes/logout.inc.php">
-                <button class="adminAction">Logout</button>
-            </a>
-        </div>
-        HTML;
-    }
-    ?>
-
     </div>
     <div class="homepageContainer03" >
         <button class="cards" onclick="window.location.href='plantInventory.php';">
@@ -110,7 +56,7 @@
         </button>
     </div>
 
-    <!-- <h2 class="no5" >Watering</h2> -->
+    <h2 class="no5" style="color: blue;" >Watering</h2>
     <div class="homepageContainer02">
         <div class="toWater"><img src="images/to_water.png" class="wateredStatus"><button class="toWatered">Kohomba</button></div>
         <div class="toWater"><img src="images/watered.png" class="wateredStatus"><button class="watered">Mee</button></div>
@@ -141,14 +87,3 @@
         <div class="toWater"><img src="images/to_water.png" class="wateredStatus"><button class="toWatered">Madan</button></div>
         <div class="toWater"><img src="images/watered.png" class="wateredStatus"><button class="watered">Bakmee</button></div>
     </div>
-    <!-- <div class="homepageContainer03"style="margin-top:50px;">
-        <button class="pageButtons">Plant Details</button>
-        <button class="pageButtons">Plant Details</button>
-        <button class="pageButtons">Plant Details</button>
-        <button class="pageButtons">Plant Details</button>
-        <button class="pageButtons">Plant Details</button>
-
-    </div> -->
-    <!-- <div class="homepageContainer01">
-    <h2 class="no1" style="font-size:30px;">Create Invoice</h2>
-    </div> -->

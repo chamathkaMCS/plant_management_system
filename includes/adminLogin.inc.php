@@ -7,15 +7,15 @@ if (isset($_POST["submit"])){
         require_once 'conn.inc.php';
         require_once 'functions.inc.php';
 
-        $signInEmpty = signinEmptyCheck($adminUsername,$password);
+        $adminLoginEmptyCheck = adminLoginEmptyCheck($adminUsername,$password);
 
-        if($signInEmpty !== false){
+        if($adminLoginEmptyCheck !== false){
             header("Location:../adminLogin.php?error=emptyInputs");
             exit;
         }
         LogAdmin($conn,$companyUsreid,$adminUsername,$password);
 }
 else{
-    header('Location:../adminLogin.php');
+    header('Location:../home.php');
     exit;
 }

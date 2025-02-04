@@ -11,34 +11,58 @@
         <h1 style="font-size:40px;font-family:roboto;"><?php echo date("l")?><h3>
 
     <?php
-        if(isset($_GET["admin"])){
-            if($_GET["admin"] == "newCompany"){
-                echo <<<HTML
-                <div style="position:absolute;top:130px;right:25px;">
-                    <a href="includes/adminRegister.inc.php">
-                    <button class="adminAction">Exit Admin View</button>
-                    </a>
+
+        require_once 'includes/conn.inc.php';
+        require_once 'includes/functions.inc.php';
+
+        $companyUserid = $_SESSION["userid"];
+        $companyAdminExists = companyAdminExists($conn,$companyUserid);
+        
+     if($companyAdminExists !== false){
+        if(isset($_SESSION["adminId"])){
+            echo <<<HTML
+            <div style="position:absolute;top:130px;right:25px;">
+                <a href="includes/adminLogout.inc.php">
+                    <button class="adminAction">Close Admin view</button>
+                </a>
                 </div>
-                <div style="position:absolute;top:130px;right:200px">
-                    <a href="#">
-                    <button class="adminAction">Create/Delete Admin</button>
-                    </a>
-                </div>
+            <div style="position:absolute;top:130px;right:200px">
+                <a href="adminRegister.php">
+                    <button class="adminAction">Create / Delete Admin</button>
+                </a>
+            </div>
             HTML;
-            }elseif($_GET["admin"] == "exitingexitingCompany"){
-                echo <<<HTML
-                    <div style="position:absolute;top:130px;right:25px;">
-                        <button class="adminViewIcon"><img style="width:65%;height:65%;" src="images/tools.png"></button>
-                    </div>
-                    <div style="position:absolute;top:130px;right:25px;">
-                        <a href="includes/adminLogin.inc.php">
-                        <button class="adminViewLabel">Access As Admin</button>
-                        </a>
-                    </div>
-                    HTML;
-            }
         }
-        ?>
+        else{
+            echo <<<HTML
+            <div style="position:absolute;top:130px;right:25px;">
+                <a href="adminLogin.php">
+                    <button class="adminAction">Open Admin view</button>
+                </a>
+                </div>
+            <div style="position:absolute;top:130px;right:200px">
+                <a href="includes/logout.inc.php">
+                    <button class="adminAction">Logout</button>
+                </a>
+            </div>
+            HTML;
+        }
+        
+    }elseif($companyAdminExists !== true ){
+        echo <<<HTML
+        <div style="position:absolute;top:130px;right:25px;">
+            <a href="adminRegister.php">
+                <button class="adminAction">Create Admin</button>
+            </a>
+            </div>
+        <div style="position:absolute;top:130px;right:200px">
+            <a href="includes/logout.inc.php">
+                <button class="adminAction">Logout</button>
+            </a>
+        </div>
+        HTML;
+    }
+    ?>
 
     </div>
     <div class="homepageContainer03" >

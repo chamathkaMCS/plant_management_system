@@ -94,35 +94,35 @@ function createUser($conn,$companyName,$companyEmail,$companyUsername,$password,
     $passwordHashed = password_hash($password,PASSWORD_DEFAULT);
     mysqli_stmt_bind_param($stmt,"ssss",$companyName,$companyEmail,$companyUsername,$passwordHashed);
     mysqli_stmt_execute($stmt);
-    mysqli_stmt_close($stmt);
     header("Location:../home.php");
-    session_start();
-    $_SESSION["userid"] = $userExists["companyUserid"];
-    $_SESSION["username"] =$userExists["companyUsername"];
-    $_SESSION["companyName"] =$userExists["companyName"];
+    logUser($conn,$companyUsername,$password);
+    mysqli_stmt_close($stmt);
 }
-function logAdmin($conn,$adminUsername,$password){
-    $userExists = adminExists($conn,$companyUserid,$adminUsername,$adminUsername);
-    if($userExists === False){
-        header("Location:../signIn.php?error=userDosentExists");
+function logAdmin($conn,$companyUsreid,$adminUsername,$password){
+    $adminExists = adminExists($conn,$companyUserid,$adminUsername,$adminUsername);
+    if($adminExists === False){
+        header("Location:../adminLogin.php?error=userDosentExists");
         exit;
     }
-    $passwordHashed = $userExists["password"];
+    $passwordHashed = $adminExists["adminPassword"];
     $passwordCheck = password_verify($password,$passwordHashed);
     if($passwordCheck === false){
-        header("Location:../signIn.php?error=wrongPassword");
+        header("Location:../adminLogin.php?error=wrongPassword");
         exit;
     }else if($passwordCheck === true){
-        header("Location:../home.php");
         session_start();
-        $_SESSION["userid"] = $userExists["companyUserId"];
-        $_SESSION["username"] =$userExists["companyUsername"];
-        $_SESSION["companyName"] =$userExists["companyName"];
-        $_SESSION["adminid"] = $userExists["adminId"];
-        $_SESSION["adminEmail"] =$userExists["adminEmail"];
-        $_SESSION["adminUsername"] =$userExists["adminUsername"];
-        header("Location:../adminRegister.php?error=loginSuccessfully");
+        $_SESSION["adminId"] = $adminExists["adminId"];
+        header("Location:../home.php");
     }
+}
+function adminLoginEmptyCheck($adminUsername,$password){
+    $result;
+    if(empty($adminUsername) || empty($password)){
+        $result = true;
+    }else{
+        $result = false;
+    }
+    return $result;
 }
 function adminExists($conn,$companyUserid,$adminEmail,$adminUsername){
     $sql = "SELECT*FROM admin_details WHERE companyUserid=? AND adminEmail =? OR adminUsername = ?;";
@@ -182,7 +182,40 @@ function createAdmin($conn,$companyUserid,$adminUsername,$password){
     $passwordHashed = password_hash($password,PASSWORD_DEFAULT);
     mysqli_stmt_bind_param($stmt,"sss",$companyUserid,$adminUsername,$passwordHashed);
     mysqli_stmt_execute($stmt);
-    mysqli_stmt_close($stmt);
-
     header("Location:../home.php");
+    logAdmin($conn,$companyUsreid,$adminUsername,$password);
+    mysqli_stmt_close($stmt);
+}
+function deleteAdmin($conn,$companyUserid,$adminUsername,$password){
+    $sql = "DELETE FROM admin_details WHERE adminUsername =?";
+    $stmt = mysqli_stmt_init($conn);
+
+    if(!mysqli_stmt_prepare($stmt,$sql)){
+        header("Location:../adminRegister.php?error=stmtFailed");
+        exit;
+    }
+    
+    mysqli_stmt_bind_param($stmt,"s",$adminUsername);
+    mysqli_stmt_execute($stmt);
+    header("Location:../includes/adminLogout.inc.php");
+    mysqli_stmt_close($stmt);
+}
+function companyAdminExists($conn,$companyUserid){
+    $sql = "SELECT*FROM admin_details WHERE companyUserid=?;";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt,$sql)){
+        header("Location:../home.php?error=stmtFailed");
+        exit;
+    }
+    mysqli_stmt_bind_param($stmt,"s",$companyUserid);
+    mysqli_stmt_execute($stmt);
+
+    $resultRow = mysqli_stmt_get_result($stmt);
+    
+    if($row = mysqli_fetch_assoc($resultRow)){
+        return true;
+    }else{
+        return false;
+    }
+    mysqli_stmt_close($stmt);
 }

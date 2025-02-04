@@ -20,8 +20,8 @@
                         echo '<div class="error"> Fill all the Fields</div>';
                     }elseif($_GET["error"] == "wrongPassword"){
                         echo '<div class="error"> Wrong Password</div>';
-                    }elseif($_GET["error"] == "loginSuccessfully"){
-                        echo '<div class="done"> Login Successfully </div>';
+                    }elseif($_GET["error"] == "userDosentExists"){
+                        echo '<div class="error"> User dosen\'t exists </div>';
                     }
                 }
             ?>

@@ -15,7 +15,9 @@
             <input type="password" id="password" name="password" placeholder="password">
             <input type="password" id="passwordRepeat" name="passwordRepeat" placeholder="repeat password">
             
-            <input type="submit" value="Create Account" name="submit">
+            <input type="submit" value="Create Account" name="create">
+            <input style="background-color:rgba(255, 0, 0, 0.86);" type="submit" value="Delete Account" name="delete">
+
             <?php
                 if(isset($_GET["error"])){
                     if($_GET["error"] == "emptyInputs"){

@@ -381,9 +381,11 @@
         border-radius:5px;
         border:0;
         transition:all 0.2s ease;
-
     }
-
+    .adminAction:hover{
+        background-color:rgb(7, 65, 7);
+        
+    }
 
 /* form CSS */
     label{

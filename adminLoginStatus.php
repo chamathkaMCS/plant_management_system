@@ -5,6 +5,7 @@
 
         $companyUserid = $_SESSION["userid"];
         $companyAdminExists = companyAdminExists($conn,$companyUserid);
+
         
      if($companyAdminExists !== false){
         if(isset($_SESSION["adminId"])){

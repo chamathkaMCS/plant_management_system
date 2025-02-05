@@ -120,7 +120,7 @@
         background-color:rgb(255, 255, 255);
         box-shadow: 1px 1px 20px rgb(216, 213, 213);
         position: fixed;
-        z-index:5;
+        z-index:9;
 
     }
     .no1{
@@ -297,7 +297,6 @@
     }
     .homepageContainer05{
         display:flex;
-        justify-content:center;
         border-radius:5px;
         margin-top:120px;
         background-color:rgba(255, 255, 255, 0);
@@ -421,6 +420,7 @@
         flex-wrap:wrap;
         transition:all 0.5s ease;
         z-index:1;
+        text-decoration: none;
     }
     .plantCard:hover{
         transform:scale(1.05);
@@ -538,4 +538,40 @@
   width: 280px;
 }
 
+/* navigation Panel */
+.navigationButton {
+    width:30px;
+    height:30px;
+    background-color:rgba(241, 241, 241, 0);
+    color: white;
+    border: none;
+    cursor: pointer;
+    opacity: 1;
+    position: fixed;
+    top: 130px;
+    left: 25px;
+}
+.navigationButton:hover{
+    animation:none;
+}
+
+.form-popup {
+    display: none;
+    position: fixed;
+    height:100vh;
+    bottom: 0;
+    left: 0px;
+    z-index:4;
+    transform: translateX(0);
+    background-color:#19741e;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.57);
+}
+
+.form-container {
+    max-width: 300px;
+    min-width:300px;
+    height:100%;
+    margin-top:110px;
+    padding:10px;
+}
 </style>

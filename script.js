@@ -9,10 +9,11 @@ function updateTime() {
 // Update the time every second without refreshing the entire page
 setInterval(updateTime, 1000);
 
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
-}
 
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-}
+// function openForm() {
+//   document.getElementById("navigationPanel").style.color = "#ffffff";
+// }
+
+// function closeForm() {
+//   document.getElementById("navigationPanel").style.display = "none";
+// }

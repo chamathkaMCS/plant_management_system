@@ -3,7 +3,9 @@
     include_once 'styles.php';
     include_once 'loginHeader.php';
     include_once 'footer.php';
-    include_once 'adminLoginStatus.php'?>
+    include_once 'adminLoginStatus.php';
+    include_once 'navigationPanel.php';
+    ?>
 
 <body class="body-style-1">
     <div class="homepageContainer04" >

@@ -3,186 +3,131 @@
     include_once 'styles.php';
     include_once 'loginHeader.php';
     include_once 'footer.php';
-    include_once 'adminLoginStatus.php'?>
+    include_once 'adminLoginStatus.php';
+    include_once 'navigationPanel.php';
+
+    ?>
 
 <body class="body-style-1">
 <div class="homepageContainer05" >
 </div>
 <div class="plantCardHolder">
-    <a href="hacked.php">
-        <div class="plantCard">
-            <img class="plantCardImg" src="images/plant1.jpg">
-            <h3 class="plantCardName">Anthuruiam</h3>
-        </div>
+    <a class="plantCard" href="hacked.php">
+        <img class="plantCardImg" src="images/plant1.jpg">
+        <h3 class="plantCardName">Anthuruiam</h3>
     </a>
-    <a href="hacked.php">
-        <div class="plantCard">
-            <img class="plantCardImg" src="images/plant1.jpg">
-            <h3 class="plantCardName">Anthuruiam</h3>
-        </div>
+    <a class="plantCard" href="hacked.php">
+        <img class="plantCardImg" src="images/plant1.jpg">
+        <h3 class="plantCardName">Anthuruiam</h3>
     </a>
-    <a href="hacked.php">
-        <div class="plantCard">
-            <img class="plantCardImg" src="images/plant1.jpg">
-            <h3 class="plantCardName">Anthuruiam</h3>
-        </div>
+    <a class="plantCard" href="hacked.php">
+        <img class="plantCardImg" src="images/plant1.jpg">
+        <h3 class="plantCardName">Anthuruiam</h3>
     </a>
-    <a href="hacked.php">
-        <div class="plantCard">
-            <img class="plantCardImg" src="images/plant1.jpg">
-            <h3 class="plantCardName">Anthuruiam</h3>
-        </div>
+    <a class="plantCard" href="hacked.php">
+        <img class="plantCardImg" src="images/plant1.jpg">
+        <h3 class="plantCardName">Anthuruiam</h3>
     </a>
-    <a href="hacked.php">
-        <div class="plantCard">
-            <img class="plantCardImg" src="images/plant1.jpg">
-            <h3 class="plantCardName">Anthuruiam</h3>
-        </div>
+    <a class="plantCard" href="hacked.php">
+        <img class="plantCardImg" src="images/plant1.jpg">
+        <h3 class="plantCardName">Anthuruiam</h3>
     </a>
-    <a href="hacked.php">
-        <div class="plantCard">
-            <img class="plantCardImg" src="images/plant1.jpg">
-            <h3 class="plantCardName">Anthuruiam</h3>
-        </div>
+    <a class="plantCard" href="hacked.php">
+        <img class="plantCardImg" src="images/plant1.jpg">
+        <h3 class="plantCardName">Anthuruiam</h3>
     </a>
-    <a href="hacked.php">
-        <div class="plantCard">
-            <img class="plantCardImg" src="images/plant1.jpg">
-            <h3 class="plantCardName">Anthuruiam</h3>
-        </div>
+    <a class="plantCard" href="hacked.php">
+        <img class="plantCardImg" src="images/plant1.jpg">
+        <h3 class="plantCardName">Anthuruiam</h3>
     </a>
-    <a href="hacked.php">
-        <div class="plantCard">
-            <img class="plantCardImg" src="images/plant1.jpg">
-            <h3 class="plantCardName">Anthuruiam</h3>
-        </div>
+    <a class="plantCard" href="hacked.php">
+        <img class="plantCardImg" src="images/plant1.jpg">
+        <h3 class="plantCardName">Anthuruiam</h3>
     </a>
-    <a href="hacked.php">
-        <div class="plantCard">
-            <img class="plantCardImg" src="images/plant1.jpg">
-            <h3 class="plantCardName">Anthuruiam</h3>
-        </div>
+    <a class="plantCard" href="hacked.php">
+        <img class="plantCardImg" src="images/plant1.jpg">
+        <h3 class="plantCardName">Anthuruiam</h3>
     </a>
-    <a href="hacked.php">
-        <div class="plantCard">
-            <img class="plantCardImg" src="images/plant1.jpg">
-            <h3 class="plantCardName">Anthuruiam</h3>
-        </div>
+    <a class="plantCard" href="hacked.php">
+        <img class="plantCardImg" src="images/plant1.jpg">
+        <h3 class="plantCardName">Anthuruiam</h3>
     </a>
-    <a href="hacked.php">
-        <div class="plantCard">
-            <img class="plantCardImg" src="images/plant1.jpg">
-            <h3 class="plantCardName">Anthuruiam</h3>
-        </div>
+    <a class="plantCard" href="hacked.php">
+        <img class="plantCardImg" src="images/plant1.jpg">
+        <h3 class="plantCardName">Anthuruiam</h3>
     </a>
-    <a href="hacked.php">
-        <div class="plantCard">
-            <img class="plantCardImg" src="images/plant1.jpg">
-            <h3 class="plantCardName">Anthuruiam</h3>
-        </div>
+    <a class="plantCard" href="hacked.php">
+        <img class="plantCardImg" src="images/plant1.jpg">
+        <h3 class="plantCardName">Anthuruiam</h3>
     </a>
-    <a href="hacked.php">
-        <div class="plantCard">
-            <img class="plantCardImg" src="images/plant1.jpg">
-            <h3 class="plantCardName">Anthuruiam</h3>
-        </div>
+    <a class="plantCard" href="hacked.php">
+        <img class="plantCardImg" src="images/plant1.jpg">
+        <h3 class="plantCardName">Anthuruiam</h3>
     </a>
-    <a href="hacked.php">
-        <div class="plantCard">
-            <img class="plantCardImg" src="images/plant1.jpg">
-            <h3 class="plantCardName">Anthuruiam</h3>
-        </div>
+    <a class="plantCard" href="hacked.php">
+        <img class="plantCardImg" src="images/plant1.jpg">
+        <h3 class="plantCardName">Anthuruiam</h3>
     </a>
-    <a href="hacked.php">
-        <div class="plantCard">
-            <img class="plantCardImg" src="images/plant1.jpg">
-            <h3 class="plantCardName">Anthuruiam</h3>
-        </div>
+    <a class="plantCard" href="hacked.php">
+        <img class="plantCardImg" src="images/plant1.jpg">
+        <h3 class="plantCardName">Anthuruiam</h3>
     </a>
-    <a href="hacked.php">
-        <div class="plantCard">
-            <img class="plantCardImg" src="images/plant1.jpg">
-            <h3 class="plantCardName">Anthuruiam</h3>
-        </div>
+    <a class="plantCard" href="hacked.php">
+        <img class="plantCardImg" src="images/plant1.jpg">
+        <h3 class="plantCardName">Anthuruiam</h3>
     </a>
-    <a href="hacked.php">
-        <div class="plantCard">
-            <img class="plantCardImg" src="images/plant1.jpg">
-            <h3 class="plantCardName">Anthuruiam</h3>
-        </div>
+    <a class="plantCard" href="hacked.php">
+        <img class="plantCardImg" src="images/plant1.jpg">
+        <h3 class="plantCardName">Anthuruiam</h3>
     </a>
-    <a href="hacked.php">
-        <div class="plantCard">
-            <img class="plantCardImg" src="images/plant1.jpg">
-            <h3 class="plantCardName">Anthuruiam</h3>
-        </div>
+    <a class="plantCard" href="hacked.php">
+        <img class="plantCardImg" src="images/plant1.jpg">
+        <h3 class="plantCardName">Anthuruiam</h3>
     </a>
-    <a href="hacked.php">
-        <div class="plantCard">
-            <img class="plantCardImg" src="images/plant1.jpg">
-            <h3 class="plantCardName">Anthuruiam</h3>
-        </div>
+    <a class="plantCard" href="hacked.php">
+        <img class="plantCardImg" src="images/plant1.jpg">
+        <h3 class="plantCardName">Anthuruiam</h3>
     </a>
-    <a href="hacked.php">
-        <div class="plantCard">
-            <img class="plantCardImg" src="images/plant1.jpg">
-            <h3 class="plantCardName">Anthuruiam</h3>
-        </div>
+    <a class="plantCard" href="hacked.php">
+        <img class="plantCardImg" src="images/plant1.jpg">
+        <h3 class="plantCardName">Anthuruiam</h3>
     </a>
-    <a href="hacked.php">
-        <div class="plantCard">
-            <img class="plantCardImg" src="images/plant1.jpg">
-            <h3 class="plantCardName">Anthuruiam</h3>
-        </div>
+    <a class="plantCard" href="hacked.php">
+        <img class="plantCardImg" src="images/plant1.jpg">
+        <h3 class="plantCardName">Anthuruiam</h3>
     </a>
-    <a href="hacked.php">
-        <div class="plantCard">
-            <img class="plantCardImg" src="images/plant1.jpg">
-            <h3 class="plantCardName">Anthuruiam</h3>
-        </div>
+    <a class="plantCard" href="hacked.php">
+        <img class="plantCardImg" src="images/plant1.jpg">
+        <h3 class="plantCardName">Anthuruiam</h3>
     </a>
-    <a href="hacked.php">
-        <div class="plantCard">
-            <img class="plantCardImg" src="images/plant1.jpg">
-            <h3 class="plantCardName">Anthuruiam</h3>
-        </div>
+    <a class="plantCard" href="hacked.php">
+        <img class="plantCardImg" src="images/plant1.jpg">
+        <h3 class="plantCardName">Anthuruiam</h3>
     </a>
-    <a href="hacked.php">
-        <div class="plantCard">
-            <img class="plantCardImg" src="images/plant1.jpg">
-            <h3 class="plantCardName">Anthuruiam</h3>
-        </div>
+    <a class="plantCard" href="hacked.php">
+        <img class="plantCardImg" src="images/plant1.jpg">
+        <h3 class="plantCardName">Anthuruiam</h3>
     </a>
-    <a href="hacked.php">
-        <div class="plantCard">
-            <img class="plantCardImg" src="images/plant1.jpg">
-            <h3 class="plantCardName">Anthuruiam</h3>
-        </div>
+    <a class="plantCard" href="hacked.php">
+        <img class="plantCardImg" src="images/plant1.jpg">
+        <h3 class="plantCardName">Anthuruiam</h3>
     </a>
-    <a href="hacked.php">
-        <div class="plantCard">
-            <img class="plantCardImg" src="images/plant1.jpg">
-            <h3 class="plantCardName">Anthuruiam</h3>
-        </div>
+    <a class="plantCard" href="hacked.php">
+        <img class="plantCardImg" src="images/plant1.jpg">
+        <h3 class="plantCardName">Anthuruiam</h3>
     </a>
-    <a href="hacked.php">
-        <div class="plantCard">
-            <img class="plantCardImg" src="images/plant1.jpg">
-            <h3 class="plantCardName">Anthuruiam</h3>
-        </div>
+    <a class="plantCard" href="hacked.php">
+        <img class="plantCardImg" src="images/plant1.jpg">
+        <h3 class="plantCardName">Anthuruiam</h3>
     </a>
-    <a href="hacked.php">
-        <div class="plantCard">
-            <img class="plantCardImg" src="images/plant1.jpg">
-            <h3 class="plantCardName">Anthuruiam</h3>
-        </div>
+    <a class="plantCard" href="hacked.php">
+        <img class="plantCardImg" src="images/plant1.jpg">
+        <h3 class="plantCardName">Anthuruiam</h3>
     </a>
-    <a href="hacked.php">
-        <div class="plantCard">
-            <img class="plantCardImg" src="images/plant1.jpg">
-            <h3 class="plantCardName">Anthuruiam</h3>
-        </div>
+    <a class="plantCard" href="hacked.php">
+        <img class="plantCardImg" src="images/plant1.jpg">
+        <h3 class="plantCardName">Anthuruiam</h3>
     </a>
     
-    </div>
+</div>
 </body>

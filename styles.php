@@ -4,7 +4,9 @@
         margin:0;
         background-color:none;
     }
-
+    a {
+    text-decoration: none;
+    }
     body{
         display:flex;
         background:rgba(255, 255, 255, 0.97);
@@ -118,7 +120,7 @@
         height: 100px;
         text-align:center;
         background-color:rgb(255, 255, 255);
-        box-shadow: 1px 1px 20px rgb(216, 213, 213);
+        box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.27);
         position: fixed;
         z-index:9;
 
@@ -228,7 +230,7 @@
         text-align:center;
         font-size:25px;
         text-decoration: none;
-        color:rgb(255, 255, 255);;
+        color:rgb(255, 255, 255);
     }
     .fill-div:hover {
         display: none;
@@ -239,7 +241,7 @@
         align-self:bottom;
         text-align:center;
         background-color:#19741e;
-        box-shadow: 1px 1px 20px rgb(216, 213, 213);
+        box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.66);
         padding:20px;
         position: fixed;
         bottom:0;
@@ -399,7 +401,7 @@
     .adminAction:hover{
         background-color:rgb(7, 65, 7);
     }
-    .plantCardHolder{
+    .contentHolder{
         display:flex;
         flex-wrap:wrap;
         width:98vw;
@@ -415,6 +417,7 @@
         /* background-color:red; */
     }
     .plantCard{
+        position: relative;
         display:flex;
         height:250px;
         width:200px;
@@ -423,25 +426,128 @@
         box-shadow: 1px 1px 20px rgb(216, 213, 213);
         flex-wrap:wrap;
         transition:all 0.5s ease;
-        z-index:1;
         text-decoration: none;
     }
     .plantCard:hover{
         transform:scale(1.05);
-        z-index:1;
-
+    }
+    .customerCard{
+        position: relative;
+        display:flex;
+        height:300px;
+        width:600px;
+        border-radius: 10px;
+        background-color:rgba(255, 255, 255, 0.65);
+        box-shadow: 1px 1px 20px rgb(216, 213, 213);
+        flex-wrap:wrap;
+        transition:all 0.5s ease;
+        text-decoration: none;
+    }
+    .customerCard:hover{
+        transform:scale(1.025);
     }
     .plantCardImg{
         border-radius: 10px 10px 0px 0px;
         height:200px;
         width:100%;
     }
-    .plantCardName{
+    .CardName{
         font-size:20px;
         font-family:"roboto",serif;
         color:rgb(255, 255, 255);
         margin:auto;
         margin-bottom:15px;
+        border-bottom
+    }
+    .customerCardImg{
+        overflow: hidden;
+        display: flex;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        border-radius: 15px;
+        height: 280px;
+        width: 200px;
+        justify-content: center;
+    }
+    .customerCardName{
+        position:absolute;
+        top:30px;
+        left:10px;
+        font-size:35px;
+        font-family:roboto;
+        font-weight: 500;
+        color:rgb(3, 126, 3);
+        margin:auto;
+        margin-bottom:15px;
+        text-decoration: none;
+        padding-bottom:5px;
+        border-bottom: 3px solid rgb(3, 126, 3);
+    }
+    .customerCardEmail{
+        position:absolute;
+        top:100px;
+        left:10px;
+        font-size:18px;
+        font-family:roboto;
+        font-weight: 300;
+        color:rgb(0, 0, 0);
+        margin:auto;
+        margin-bottom:15px;
+        text-decoration: none;
+    }
+    .customerCardContact{
+        position:absolute;
+        top:125px;
+        left:10px;
+        font-size:18px;
+        font-family:roboto;
+        font-weight: 300;
+        color:rgb(0, 0, 0);
+        margin:auto;
+        margin-bottom:15px;
+        text-decoration: none;
+    }
+    .customerCardNid{
+        position:absolute;
+        top:150px;
+        left:10px;
+        font-size:18px;
+        font-family:roboto;
+        font-weight: 300;
+        color:rgb(0, 0, 0);
+        margin:auto;
+        margin-bottom:15px;
+        text-decoration: none;
+    }
+    .customerCardAddress{
+        position:absolute;
+        top:175px;
+        left:10px;
+        text-align:left;
+        font-family:roboto;
+        font-weight: 300;
+        font-size:18px;
+        color:rgb(0, 0, 0);
+        margin:auto;
+        margin-bottom:15px;
+        text-decoration: none;
+    }
+    .imgHolder{
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .custormerDetails{
+        position: relative;
+        margin-top:20px;
+        text-align:left;
+        font-family:roboto;
+        font-weight: 300;
+        font-size:18px;
+        text-decoration:bold;
+        color:rgb(0, 0, 0);
+        width: 270px;
+        /* background-color: gold; */
     }
 /* form CSS */
     label{
@@ -530,17 +636,17 @@
         background-size: cover;
     }
     .open-button {
-  background-color: #555;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  opacity: 0.8;
-  position: fixed;
-  bottom: 23px;
-  right: 28px;
-  width: 280px;
-}
+        background-color: #555;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        opacity: 0.8;
+        position: fixed;
+        bottom: 23px;
+        right: 28px;
+        width: 280px;
+        }
 
 /* navigation Panel */
 .navigationButton {
@@ -598,5 +704,21 @@
     height:100%;
     margin-top:110px;
     padding:10px;
+}
+.navButton{
+    display:flex;
+    align-items:center;
+    width:100%;
+    height:50px;
+    border-bottom: 1px solid white;
+
+}
+.active{
+    display:flex;
+    align-items:center;
+    width:100%;
+    height:50px;
+    border-bottom: 1px solid white;
+    background-color:rgb(255, 0, 0);
 }
 </style>

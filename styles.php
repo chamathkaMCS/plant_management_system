@@ -156,6 +156,12 @@
         margin:auto;
         font-family:arial;
     }
+    .no-hover-effect{
+        text-decoration: none;
+    }
+    .no-hover-effect:hover{
+        text-decoration: none;
+    }
     .date{
         font-size:120px;
         font-family:roboto;
@@ -238,8 +244,6 @@
         position: fixed;
         bottom:0;
         z-index:5;
-
-
     }
     .roundedImage {
         border-radius: 50%;
@@ -552,21 +556,42 @@
     left: 25px;
 }
 .navigationButton:hover{
-    animation:none;
+    width:30px;
+    height:30px;
+    background-color:rgba(241, 241, 241, 0);
+    color: white;
+    border: none;
+    cursor: pointer;
+    opacity: 1;
+    position: fixed;
+    top: 130px;
+    left: 25px;
 }
 
+.form-closed {
+    display:none;
+    height:100vh;
+    width: 0px;
+    bottom: 0;
+    left: 0px;
+    z-index:4;
+    background-color:#19741e;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.57);
+    overflow:hidden;
+    transition:all 0.2s ease;
+}
 .form-popup {
-    display: none;
-    position: fixed;
+    display: block;
+    position: fixed;;
     height:100vh;
     bottom: 0;
     left: 0px;
     z-index:4;
-    transform: translateX(0);
     background-color:#19741e;
     box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.57);
+    transition:all 0.2s ease;
+    overflow:hidden;
 }
-
 .form-container {
     max-width: 300px;
     min-width:300px;

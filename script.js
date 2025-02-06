@@ -10,10 +10,3 @@ function updateTime() {
 setInterval(updateTime, 1000);
 
 
-// function openForm() {
-//   document.getElementById("navigationPanel").style.color = "#ffffff";
-// }
-
-// function closeForm() {
-//   document.getElementById("navigationPanel").style.display = "none";
-// }

@@ -3,9 +3,12 @@
     *{
         margin:0;
         background-color:none;
+        font-family:roboto;
+        font-weight:300px;
     }
-    a {
-    text-decoration: none;
+    a{
+        text-decoration: none;
+        color:black;
     }
     body{
         display:flex;
@@ -107,7 +110,7 @@
         background-color:rgb(255, 255, 255);
         box-shadow: 1px 1px 20px rgb(216, 213, 213);
         text-align:center;
-        font-family:arial;
+        font-family:roboto;
 
     }
     .bodycontainer {
@@ -128,7 +131,7 @@
     .no1{
         color: green;
         font-size: 50px;
-        font-family:"roboto",serif;
+        font-family:roboto;
         text-align :center;
         margin-top :25px;
         margin-bottom:30px;
@@ -138,7 +141,7 @@
         text-align:center;
         margin:auto;
         text-decoration: none;
-        font-family:arial;
+        font-family:roboto;
     }   
     .no3{
         color: black;
@@ -147,7 +150,7 @@
     }
     .no4{
         color: rgb(255, 255, 255);;
-        font-family:arial;
+        font-family:roboto;
         font-size:12px;
     }
     .no5{
@@ -156,7 +159,7 @@
         padding-top:755px;
         color: #000;;
         margin:auto;
-        font-family:arial;
+        font-family:roboto;
     }
     .no-hover-effect{
         text-decoration: none;
@@ -439,7 +442,6 @@
         border-radius: 10px;
         background-color:rgba(255, 255, 255, 0.65);
         box-shadow: 1px 1px 20px rgb(216, 213, 213);
-        flex-wrap:wrap;
         transition:all 0.5s ease;
         text-decoration: none;
     }
@@ -484,69 +486,20 @@
         padding-bottom:5px;
         border-bottom: 3px solid rgb(3, 126, 3);
     }
-    .customerCardEmail{
-        position:absolute;
-        top:100px;
-        left:10px;
-        font-size:18px;
-        font-family:roboto;
-        font-weight: 300;
-        color:rgb(0, 0, 0);
-        margin:auto;
-        margin-bottom:15px;
-        text-decoration: none;
-    }
-    .customerCardContact{
-        position:absolute;
-        top:125px;
-        left:10px;
-        font-size:18px;
-        font-family:roboto;
-        font-weight: 300;
-        color:rgb(0, 0, 0);
-        margin:auto;
-        margin-bottom:15px;
-        text-decoration: none;
-    }
-    .customerCardNid{
-        position:absolute;
-        top:150px;
-        left:10px;
-        font-size:18px;
-        font-family:roboto;
-        font-weight: 300;
-        color:rgb(0, 0, 0);
-        margin:auto;
-        margin-bottom:15px;
-        text-decoration: none;
-    }
-    .customerCardAddress{
-        position:absolute;
-        top:175px;
-        left:10px;
-        text-align:left;
-        font-family:roboto;
-        font-weight: 300;
-        font-size:18px;
-        color:rgb(0, 0, 0);
-        margin:auto;
-        margin-bottom:15px;
-        text-decoration: none;
-    }
     .imgHolder{
         max-width: 100%;
         max-height: 100%;
     }
     .custormerDetails{
         position: relative;
+        display: block;
         margin-top:20px;
         text-align:left;
         font-family:roboto;
         font-weight: 300;
         font-size:18px;
-        text-decoration:bold;
         color:rgb(0, 0, 0);
-        width: 270px;
+        width: 100%;
         /* background-color: gold; */
     }
 /* form CSS */

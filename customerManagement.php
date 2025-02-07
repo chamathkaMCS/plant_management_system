@@ -22,10 +22,10 @@
                 <p class="custormerDetails"><strong>Address -</strong></p>
             </div>
             <div style="position:absolute; display:flex;top:80px;left:120px;flex-wrap:wrap;width:270px;">
-                <a href="images/tools.svg"><p class="custormerDetails">Abaeygunasekara@gmail.com</p></a>
-                <a href="images/tools.svg"><p class="custormerDetails">077 28 56 952</p></a>
-                <a href="images/tools.svg"><p class="custormerDetails">200227800536</p></a>
-                <a href="images/tools.svg"><p class="custormerDetails">No 69, Govini Koheda Rd, Muth Ethana Waththa, Kadawatha.</p></a>
+                <p class="custormerDetails"><a href="images/tools.svg">Abaeygunasekara@gmail.com</a></P>
+                <p class="custormerDetails"><a href="images/tools.svg">077 28 56 952</a></P>
+                <p class="custormerDetails"><a href="images/tools.svg">200227800536</a></P>
+                <p class="custormerDetails"><a href="images/tools.svg">No 69, Govini Koheda Rd, Muth Ethana Waththa, Kadawatha.</a></P>
             </div>
         </div>
 </div>

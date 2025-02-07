@@ -16,15 +16,7 @@
             <input type="submit" value="Login" name="submit">
 
         <?php
-            if(isset($_GET["error"])){
-                if($_GET["error"] == "emptyInputs"){
-                    echo '<div class="error"> Fill all the Fields</div>';
-                }elseif($_GET["error"] == "wrongPassword"){
-                    echo '<div class="error"> Wrong Password</div>';
-                }elseif($_GET["error"] == "userDosentExists"){
-                    echo '<div class="error"> Invalid Email or Username</div>';
-            }
-        }
+            
         ?>
         </form>
                 <p>New to here <a href="signUp.php">Register</a></p>

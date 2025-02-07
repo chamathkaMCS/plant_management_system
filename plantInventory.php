@@ -25,7 +25,7 @@
             while($row=mysqli_fetch_array($result)){
     ?>
                 <div class="customerCard" href="hacked.php">
-                <a class="customerCardImg"href="hacked.php"><img class="imageHoder" src="uploads/<?php echo $row["plantImage"];?>" ></a>
+                <a class="customerCardImg"href="hacked.php"><img class="imageHoder" src="uploads/<?php echo $row["plantImage"];?>.jpg" ></a>
                 <a href="hacked.php"><p class="customerCardName"><?php echo $row["plantName"];?></p></a>
                 <div style="position:absolute; display:flex;top:80px;left:10px;flex-wrap:wrap;width:150px;">
                     <p class="custormerDetails"><strong>Scientific Name -</strong></p>
@@ -37,7 +37,7 @@
                     <p class="custormerDetails"><a href="images/tools.svg"><?php echo $row["scientificName"];?></a></P>
                     <p class="custormerDetails"><a href="images/tools.svg"><?php echo $row["availableStock"];?></a></P>
                     <p class="custormerDetails"><a href="images/tools.svg"><?php echo $row["orderdStock"];?></a></P>
-                    <p class="custormerDetails"><a href="images/tools.svg">Rs.<?php echo $row["unitPrice"];?>/=</a></P>
+                    <p class="custormerDetails" ><a href="images/tools.svg" style="color:rgb(255, 0, 0);font-weight:400;">Rs.<?php echo $row["unitPrice"];?>/=</a></P>
                 </div>
             </div>
     <?php

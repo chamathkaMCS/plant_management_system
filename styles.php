@@ -471,6 +471,7 @@
         height: 280px;
         width: 200px;
         justify-content: center;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.14);
     }
     .customerCardName{
         position:absolute;

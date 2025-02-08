@@ -10,7 +10,6 @@
     <div class="loginPopup">
         <div class="formContainer">
         <form action="includes/signUp.inc.php" method="post">
-
             <input type="text" id="companyName" name="companyName" placeholder="Company Name">
             <input type="text" id="companyEmail" name="companyEmail" placeholder="Company Email">
             <input type="text" id="companyUsername" name="companyUsername" placeholder="Company Username">
@@ -38,6 +37,6 @@
                 }
             ?>
         </form>
-                <p class=>Already have a account <a href="signIn.php">sign in</a></p>
+                <p class=>Already have a account <a href="signIn.php" style="color:blue;">Sign in</a></p>
     </div>
 </div>

@@ -19,7 +19,7 @@
             
         ?>
         </form>
-                <p>New to here <a href="signUp.php">Register</a></p>
+                <p>New to here <a href="signUp.php"style="color:blue;">Register</a></p>
 </div>
     </div>
 </div>

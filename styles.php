@@ -190,7 +190,7 @@
         padding-top:10px;
         width:100%;
     }
-    .toWatered{
+    .toWaterbutton{
         position:relative;
         color:rgb(255, 255, 255);;
         background-color:rgb(21, 143, 7);
@@ -204,7 +204,7 @@
         margin:auto;
         margin-bottom:0;
     }
-    .watered{
+    .wateredButon{
         position:relative;
         color:rgb(255, 255, 255);;
         background-color:rgb(89, 91, 216);
@@ -224,6 +224,25 @@
         min-height: 70%;
         max-height:70%;
         margin-top:0px;
+    }
+    .waterDiv{
+        display:flex;
+        min-width:100px;
+        align-self:flex-end;
+        align-items:flex-end;
+        justify-content:center;
+        flex-wrap:wrap;
+        margin-bottom:10px;
+        margin-left:10px;
+        border-radius:5px;
+        background-color:rgb(255, 255, 255);
+        box-shadow: 1px 1px 20px rgb(197, 206, 255);
+        width:100px;
+        height:120px;
+    }
+    .toWater:hover{
+        transform:scale(1.05);
+        transition:all 0.2s ease;
     }
     .fill-div {
         display: block;
@@ -338,26 +357,6 @@
         width:300px;
         height:250px;
     }
-
-    .toWater{
-        display:flex;
-        min-width:100px;
-        align-self:flex-end;
-        align-items:flex-end;
-        justify-content:center;
-        flex-wrap:wrap;
-        margin-bottom:10px;
-        margin-left:10px;
-        border-radius:5px;
-        background-color:rgb(255, 255, 255);
-        box-shadow: 1px 1px 20px rgb(197, 206, 255);
-        width:100px;
-        height:120px;
-    }
-    .toWater:hover{
-        transform:scale(1.05);
-        transition:all 0.2s ease;
-    }
     .adminViewIcon{
         opacity: 1;
         width:40px;
@@ -401,8 +400,20 @@
         border:0;
         transition:all 0.2s ease;
     }
+    input[type=text].adminAction{
+        
+        width:170px;
+        height:40px;
+        color:black;
+        font-family:arial;
+        background-color:rgb(226, 226, 226);
+
+    }
     .adminAction:hover{
         background-color:rgb(7, 65, 7);
+    }
+    input.adminAction:hover{
+        background-color:rgb(255, 255, 255);
     }
     .contentHolder{
         display:flex;
@@ -425,7 +436,7 @@
         height:250px;
         width:200px;
         border-radius: 10px;
-        background-color:rgba(3, 126, 3, 0.56);
+        background-color:rgba(255, 255, 255, 0.56);
         box-shadow: 1px 1px 20px rgb(216, 213, 213);
         flex-wrap:wrap;
         transition:all 0.5s ease;
@@ -434,34 +445,38 @@
     .plantCard:hover{
         transform:scale(1.05);
     }
-    .customerCard{
+    .Card{
         position: relative;
         display:flex;
         height:300px;
         width:600px;
         border-radius: 10px;
-        background-color:rgba(255, 255, 255, 0.65);
+        background-color:rgb(255, 255, 255);
         box-shadow: 1px 1px 20px rgb(216, 213, 213);
         transition:all 0.5s ease;
         text-decoration: none;
     }
-    .customerCard:hover{
+    .Card:hover{
         transform:scale(1.025);
     }
     .plantCardImg{
         border-radius: 10px 10px 0px 0px;
         height:200px;
-        width:100%;
+        width:200px;
+        overflow: hidden;
+        display: flex;
+        position: absolute;
+        justify-content: center;
     }
-    .CardName{
+    .plantCardName{
         font-size:20px;
         font-family:"roboto",serif;
-        color:rgb(255, 255, 255);
+        color:rgb(3, 126, 3);
         margin:auto;
         margin-bottom:15px;
         border-bottom
     }
-    .customerCardImg{
+    .CardImg{
         overflow: hidden;
         display: flex;
         position: absolute;
@@ -473,7 +488,7 @@
         justify-content: center;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.14);
     }
-    .customerCardName{
+    .CardName{
         position:absolute;
         top:30px;
         left:10px;
@@ -486,10 +501,6 @@
         text-decoration: none;
         padding-bottom:5px;
         border-bottom: 3px solid rgb(3, 126, 3);
-    }
-    .imgHolder{
-        max-width: 100%;
-        max-height: 100%;
     }
     .custormerDetails{
         position: relative;
@@ -662,17 +673,120 @@
 .navButton{
     display:flex;
     align-items:center;
+    text-align:center;
     width:100%;
     height:50px;
     border-bottom: 1px solid white;
-
+    transition:all 0.5s ease;
+    color:rgb(255, 255, 255);
+    margin:auto;
+    text-decoration: none;
+    font-family:roboto;
+    font-size:22px;
 }
-.active{
+.navButton:hover{
+    background-color:rgb(6, 85, 26);
+}
+.navButtonActive{
     display:flex;
     align-items:center;
+    text-align:center;
     width:100%;
     height:50px;
     border-bottom: 1px solid white;
-    background-color:rgb(255, 0, 0);
+    transition:all 0.5s ease;
+    color:rgb(0, 0, 0);
+    margin:auto;
+    text-decoration: none;
+    font-family:roboto;
+    font-size:22px;
+    font-weight:600;
+}
+
+/* Profile Viewer*/
+.Profile_container{
+    position: relative;
+    margin:auto;
+    margin-top: 200px;
+    background-color:white;
+    display:flex;
+    width:80%;
+    height:35vh;
+    border-radius: 15px;
+}
+.popUpFormContainer{
+    position: absolute;
+    flex-direction:row;
+    align-self:center;
+    background-color: white;
+    border-radius:10px;
+    display:flex;
+    width:70vw;
+}
+.inputContainer{
+    position:relative;
+    width:90%;
+    margin-top:5px;
+    margin-left:30px;
+}
+.imageUpload{
+    position:relative;
+    display: flex;
+    margin:auto;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0);
+    justify-content: center;
+    width:300px;
+    height:300px;
+}
+option{
+    font-family:arial;
+}
+.ProfileDetails{
+        display: block;
+        margin-bottom:15px;
+        text-align:left;
+        font-family:roboto;
+        font-weight: 300;
+        font-size:25px;
+        color:rgb(0, 0, 0);
+        width: 100%;
+        /* background-color: gold; */
+    }
+.invoice_container{
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 100px;
+    background-color:white;
+    width:80%;
+    min-height:370px;
+    border-radius: 15px 15px 0px 0px;
+    overflow:scroll;
+}
+/*table*/
+.customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.customers td, .customers th {
+  border: 1px solid #ddd;
+  padding: 0px;
+}
+.customers tr {
+    height:50px;
+}
+.customers tr:nth-child(even){background-color: #f2f2f2;}
+
+.customers tr:hover {background-color: #ddd;}
+
+.customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #04AA6D;
+  color: white;
 }
 </style>

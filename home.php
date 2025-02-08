@@ -5,6 +5,7 @@
     include_once 'footer.php';
     include_once 'adminLoginStatus.php';
     include_once 'navigationPanel.php';
+    $_SESSION['current_page'] = "home.php";
     ?>
 
 <body class="body-style-1">
@@ -13,20 +14,120 @@
         <h1 style="font-size:20px;font-family:roboto;"><?php echo date("Y.m.d")?></h1>
         <h1 style="font-size:40px;font-family:roboto;"><?php echo date("l")?><h3>
     </div>
+    
     <div class="homepageContainer03" >
-        <button class="cards" onclick="window.location.href='plantInventory.php';">
-            <h1 class="date">10</h1>
-            <h1 class="time">15:30 PM</h1>
-            <h1 class="day">Friday<h3>
-            <h1 style="width:100%;">Event 01</h1>
-            <p style="margin-bottom:10px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci cum, quibusdam maxime rem dolorum laboriosam unde incidunt recusandae labore tenetur.</p>
-        </button>
-        
+    <?php
+        //fertilization blocks
+        require_once 'includes/conn.inc.php';
+        $companyUserid = $_SESSION["userid"];
+
+        $query = "SELECT * FROM plant_inventory 
+            WHERE companyUserid = $companyUserid 
+            AND fertilization IS NOT NULL 
+            ORDER BY fertilization ASC 
+            LIMIT 2";
+        $result = mysqli_query($conn,$query);
+
+        if(mysqli_num_rows($result)>0){
+            while($row=mysqli_fetch_array($result)){
+            ?>
+        <a class="cards" href="uploads/<?php echo $row["plantImage"];?>.jpg">
+            <h1 class="date"><?php echo date("d", strtotime($row["fertilization"])); ?></h1>
+            <h1 class="time"><?php echo date("H:i", strtotime($row["fertilization"])); ?> PM</h1>
+            <h1 class="day"><?php echo date("l", strtotime($row["fertilization"])); ?><h3>
+            <h1 style="width:100%;">Fertilization</h1>
+            <div style="width:100%;height:90px;overflow:scroll;margin-bottom:10px;"><p style="margin-bottom:10px;"><?php echo ($row["fertilization_note"]); ?></p></div>
+        </a>
+        <?php
+            }
+        }
+        //maintenance blocks
+        require_once 'includes/conn.inc.php';
+        $companyUserid = $_SESSION["userid"];
+
+        $query = "SELECT * FROM plant_inventory
+            WHERE companyUserid = $companyUserid 
+            AND maintenance IS NOT NULL 
+            ORDER BY maintenance ASC 
+            LIMIT 2";
+        $result = mysqli_query($conn,$query);
+
+        if(mysqli_num_rows($result)>0){
+            while($row=mysqli_fetch_array($result) ){
+    ?>
+        <a class="cards" href="uploads/<?php echo $row["plantImage"];?>.jpg">
+            <h1 class="date"><?php echo date("d", strtotime($row["maintenance"])); ?></h1>
+            <h1 class="time"><?php echo date("H:i", strtotime($row["maintenance"])); ?> PM</h1>
+            <h1 class="day"><?php echo date("l", strtotime($row["maintenance"])); ?><h3>
+            <h1 style="width:100%;">Maintenance</h1>
+            <div style="width:100%;height:90px;overflow:scroll;margin-bottom:10px;"><p style="margin-bottom:10px;"><?php echo ($row["maintenance_note"]); ?></p></div>
+        </a>
+    <?php
+            }
+        }
+        //protection blocks
+        require_once 'includes/conn.inc.php';
+        $companyUserid = $_SESSION["userid"];
+
+        $query = "SELECT * FROM plant_inventory
+            WHERE companyUserid = $companyUserid 
+            AND protection IS NOT NULL 
+            ORDER BY protection ASC 
+            LIMIT 2";
+        $result = mysqli_query($conn,$query);
+
+        if(mysqli_num_rows($result)>0){
+            while($row=mysqli_fetch_array($result) ){
+        ?>
+        <a class="cards" href="uploads/<?php echo $row["plantImage"];?>.jpg">
+            <h1 class="date"><?php echo date("d", strtotime($row["protection"])); ?></h1>
+            <h1 class="time"><?php echo date("H:i", strtotime($row["protection"])); ?> PM</h1>
+            <h1 class="day"><?php echo date("l", strtotime($row["protection"])); ?><h3>
+            <h1 style="width:100%;">Protection</h1>
+            <div style="width:100%;height:90px;overflow:scroll;margin-bottom:10px;"><p style="margin-bottom:10px;"><?php echo ($row["protection_note"]); ?></p></div>
+        </a>
+        <?php
+            }
+        }
+        ?>
     </div>
 
+    <!-- watering blocks -->
     <h2 class="no5" style="color: blue;" >Watering</h2>
     <div class="homepageContainer02">
-        <div class="toWater"><img src="images/to_water.png" class="wateredStatus"><button class="toWatered">Kohomba</button></div>
-        <div class="toWater"><img src="images/watered.png" class="wateredStatus"><button class="watered">Mee</button></div>
-        
+        <?php
+            $companyUserid = $_SESSION["userid"];
+            $query = "SELECT * FROM plant_inventory
+            WHERE companyUserid = $companyUserid 
+            AND watering IS NOT NULL 
+            ORDER BY watering ASC";
+            $result = mysqli_query($conn,$query);
+
+            if(mysqli_num_rows($result)==0){
+        ?>
+                <h1 style="margin:auto;font-size:50px;color:rgb(178, 192, 180);font-family:Arial;margin-top:20vh">  No Records Available In your Company</h1>
+        <?php
+            }elseif(mysqli_num_rows($result)>0){
+                while($row=mysqli_fetch_array($result)){
+
+                    $wateredTime = $row["watering"];
+                    $plantId = $row["plantId"];
+                    $currentTime = new DateTime();
+                    $wateredDateTime = new DateTime($wateredTime);
+                    $current_time = date("Y-m-d H:i:s");
+                    $interval = $currentTime->diff($wateredDateTime);
+
+                    if ($interval->h >= 24 || $interval->days > 0){
+                        ?>
+                        <div class="waterDiv"><img src="images/to_water.png" class="wateredStatus"><button onclick="watered($conn,'<?php echo $plantId; ?>', '<?php echo $current_time; ?>')" class="toWaterbutton"><?php echo $row["plantName"];?></button>
+                        </div>
+                        <?php   
+                    }else{
+                        ?>
+                        <div class="waterDiv"><img src="images/watered.png" class="wateredStatus"><button  class="wateredButon"><?php echo $row["plantName"];?></button></div>
+                        <?php 
+                    }
+                }
+            }
+        ?>
     </div>

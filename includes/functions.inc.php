@@ -219,3 +219,11 @@ function companyAdminExists($conn,$companyUserid){
     }
     mysqli_stmt_close($stmt);
 }
+function watered($conn, $plantId, $current_time) {
+    $sql = "UPDATE plant_inventory SET watering = ? WHERE plantId = ?";
+    if ($stmt = $conn->prepare($sql)) {
+        $stmt->bind_param("si", $current_time, $plantId);
+        $stmt->execute();
+        $stmt->close();
+    }
+}

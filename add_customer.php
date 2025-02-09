@@ -32,7 +32,6 @@
                     <select id="gender" name="gender">
                     <option value="male">Male</option>
                     <option value="female">Female</option>
-                    <option value="male">Ushan</option>
                 </div>
                 <div class="inputContainer">
                     <input type="submit" value="Add customer" name="submit" style="margin-bottom:50px;">

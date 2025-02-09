@@ -93,7 +93,7 @@
     </div>
 
     <!-- watering blocks -->
-    <h2 class="no5" style="color: blue;" >Watering</h2>
+    <h2 class="no5" style="color: blue;" >Watered Status</h2>
     <div class="homepageContainer02">
         <?php
             $companyUserid = $_SESSION["userid"];

@@ -2,8 +2,10 @@
     include_once 'indexHeader.php';
     include_once 'styles.php';
     include_once 'footer.php';?>
-
 <body class="body-style-1">
+<?php
+if(isset($_SESSION["adminId"])){
+?>
 <div style="margin-top:350px;">
     <h1 class="no1" style="font-size:50px;margin-top:-90px;">Enter Your </h1>
     <h1 class="no1"style="font-size:30px;margin-top:-30px;">Company Admin Account Details</h1>
@@ -38,6 +40,12 @@
                 }
             ?>
         </form>
-</div>
+    </div>
     </div>
 </div>
+<?php
+}else{
+    echo'<h1 style="margin:auto;font-size:50px;color:rgb(178, 192, 180);font-family:Arial;margin-top:20vh">!!!</h1>';
+    exit();
+}
+?>

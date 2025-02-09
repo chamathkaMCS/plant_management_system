@@ -6,7 +6,7 @@
     include_once 'adminLoginStatus.php';
     include_once 'navigationPanel.php';
     include_once 'liveSearch.php';
-    $_SESSION['current_page'] = "plantInventory.php";
+    $_SESSION['current_page'] = "plantInventory";
     ?>
 
 

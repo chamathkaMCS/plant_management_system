@@ -112,7 +112,7 @@ function logAdmin($conn,$companyUsreid,$adminUsername,$password){
     }else if($passwordCheck === true){
         session_start();
         $_SESSION["adminId"] = $adminExists["adminId"];
-        header("Location:../home.php");
+        header('Location: ../' . $_SESSION["current_page"] . '.php');
     }
 }
 function adminLoginEmptyCheck($adminUsername,$password){

@@ -45,7 +45,7 @@ if(isset($_SESSION["adminId"])){
 </div>
 <?php
 }else{
-    echo'<h1 style="margin:auto;font-size:50px;color:rgb(178, 192, 180);font-family:Arial;margin-top:20vh">!!!</h1>';
+    echo'<h1 style="margin:auto;font-size:50px;color:rgb(178, 192, 180);font-family:Arial;margin-top:40vh"> 404 Page Not Found ! </h1>';
     exit();
 }
 ?>

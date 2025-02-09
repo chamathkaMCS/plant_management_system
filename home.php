@@ -31,7 +31,7 @@
         if(mysqli_num_rows($result)>0){
             while($row=mysqli_fetch_array($result)){
             ?>
-        <a class="cards" href="uploads/<?php echo $row["plantImage"];?>.jpg">
+        <a class="cards" href="plant_profile.php?plantId=<?php echo urlencode($row['plantId']); ?>">
             <h1 class="date"><?php echo date("d", strtotime($row["fertilization"])); ?></h1>
             <h1 class="time"><?php echo date("H:i", strtotime($row["fertilization"])); ?> PM</h1>
             <h1 class="day"><?php echo date("l", strtotime($row["fertilization"])); ?><h3>
@@ -55,7 +55,7 @@
         if(mysqli_num_rows($result)>0){
             while($row=mysqli_fetch_array($result) ){
     ?>
-        <a class="cards" href="uploads/<?php echo $row["plantImage"];?>.jpg">
+        <a class="cards" href="plant_profile.php?plantId=<?php echo urlencode($row['plantId']); ?>">
             <h1 class="date"><?php echo date("d", strtotime($row["maintenance"])); ?></h1>
             <h1 class="time"><?php echo date("H:i", strtotime($row["maintenance"])); ?> PM</h1>
             <h1 class="day"><?php echo date("l", strtotime($row["maintenance"])); ?><h3>
@@ -79,7 +79,7 @@
         if(mysqli_num_rows($result)>0){
             while($row=mysqli_fetch_array($result) ){
         ?>
-        <a class="cards" href="uploads/<?php echo $row["plantImage"];?>.jpg">
+        <a class="cards" href="plant_profile.php?plantId=<?php echo urlencode($row['plantId']); ?>">
             <h1 class="date"><?php echo date("d", strtotime($row["protection"])); ?></h1>
             <h1 class="time"><?php echo date("H:i", strtotime($row["protection"])); ?> PM</h1>
             <h1 class="day"><?php echo date("l", strtotime($row["protection"])); ?><h3>

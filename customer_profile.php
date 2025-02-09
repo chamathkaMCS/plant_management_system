@@ -49,7 +49,7 @@
             </div>
             </div>
             <div style="background-color:rgba(143, 145, 40, 0);width:30%;display:flex;">
-                <div class="imageUpload" style="margin-right:20px;";><img src="uploads/200125369258.jpg"></div>
+                <div class="imageUpload" style="margin-right:20px;";><img src="uploads/<?php echo $rowcustomer["nId"];?>.jpg"></div>
             </div>
             </div>
         <?php

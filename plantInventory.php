@@ -32,7 +32,7 @@
     }
         while($row=mysqli_fetch_array($result)){
             ?>
-            <div class="Card"><a style="width:100%;height:100%;"href="plant_profile.php">
+            <div class="Card"><a style="width:100%;height:100%;"href="plant_profile.php?plantId=<?php echo urlencode($row['plantId']); ?>">
             <div class="CardImg"href="uploads/<?php echo $row["plantImage"];?>.jpg"><img src="uploads/<?php echo $row["plantImage"];?>.jpg" ></div>
             <div href="uploads/<?php echo $row["plantImage"];?>.jpg"><p class="CardName"><?php echo $row["plantName"];?></p></div>
                 <div style="position:absolute; display:flex;top:80px;left:10px;flex-wrap:wrap;width:150px;">

@@ -81,8 +81,9 @@
                             $stmtItems->execute();
                             $resultItems = $stmtItems->get_result();
                             while($rowItems=mysqli_fetch_array($resultItems)){
-                                echo $rowItems["itemCode"];
-                        }?>,</td>
+                                echo $rowItems["itemCode"]?>,<?php
+                                ;
+                        }?></td>
                         <td style="color:red;"><?php echo $rowinvoice["payment"];?>/=</td>
                     </tr>
                     <?php

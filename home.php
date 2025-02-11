@@ -95,6 +95,7 @@
     <!-- watering blocks -->
     <h2 class="no5" style="color: blue;" >Watered Status</h2>
     <div class="homepageContainer02">
+    <button id="watered" onclick="watered()">test</button>
         <?php
             $companyUserid = $_SESSION["userid"];
             $query = "SELECT * FROM plant_inventory
@@ -119,7 +120,7 @@
 
                     if ($interval->h >= 24 || $interval->days > 0){
                         ?>
-                        <div class="waterDiv"><img src="images/to_water.png" class="wateredStatus"><button onclick="watered($conn,'<?php echo $plantId; ?>', '<?php echo $current_time; ?>')" class="toWaterbutton"><?php echo $row["plantName"];?></button>
+                        <div class="waterDiv"><img src="images/to_water.png" class="wateredStatus"><button id="watered" onclick="watered()" class="toWaterbutton"><?php echo $row["plantName"];?></button>
                         </div>
                         <?php   
                     }else{

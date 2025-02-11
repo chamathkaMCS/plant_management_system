@@ -9,7 +9,7 @@ function updateTime() {
 // Update the time every second without refreshing the entire page
 setInterval(updateTime, 1000);
 
-function openPanel() {
+function test() {
     document.getElementById("navigationPanel").className= "form-popup";
   }
   
@@ -17,6 +17,6 @@ function closePanel() {
     document.getElementById("navigationPanel").className = "form-closed";
   }
 
-function readText(element) {
-    alert("Clicked name: " + element.innerText);
-}
+function watered() {
+    document.getElementById("navigationPanel").className = "form-closed";
+  }

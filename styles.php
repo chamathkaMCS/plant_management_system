@@ -2,9 +2,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
     *{
         margin:0;
-        background-color:none;
         font-family:roboto;
-        font-weight:300px;
     }
     a{
         text-decoration: none;

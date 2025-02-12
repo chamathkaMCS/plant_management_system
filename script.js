@@ -19,23 +19,35 @@ function closePanel() {
 
 document.querySelectorAll(".toWaterbutton").forEach(button => {
   button.addEventListener("click", function() {
-        let plantid = this.dataset.plantid;  
-        let currentDateTime = new Date().toISOString().slice(0, 19).replace("T", " "); 
+        let previous = this.dataset.previous;
+        let plantid = this.dataset.plantid;
+        let currentDateTime = new Date().toISOString().slice(0, 19).replace("T", " ");
+        localStorage.setItem("plantID"+ plantid,previous);
 
-        // Log to verify data being sent
-        console.log("Sending plantId: " + plantid + ", currentDateTime: " + currentDateTime);
+        console.log(previous,plantid);
+        setTimeout(function() {location.reload();}, 100); 
 
         fetch("updateDate.php", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: "plantId=" + encodeURIComponent(plantid) + "&waterDateTime=" + encodeURIComponent(currentDateTime)
         })
-        .then(response => response.text())  
-        .then(data => {
-            // Check the response from the server
-            console.log("Server response: " + data);
-            alert("Watering updated: " + data); 
-        })
         .catch(error => console.error("Error:", error)); 
     });
 });
+document.querySelectorAll(".wateredButton").forEach(button => {
+    button.addEventListener("click", function() {
+          let plantid = this.dataset.plantid;
+          let prevDate =localStorage.getItem("plantID"+ plantid);
+
+          console.log(prevDate,plantid);
+          setTimeout(function() {location.reload();}, 100);
+
+          fetch("updateDate.php", {
+              method: "POST",
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: "plantId=" + encodeURIComponent(plantid) + "&waterDateTime=" + encodeURIComponent(prevDate)
+          })
+          .catch(error => console.error("Error:", error)); 
+      });
+  });

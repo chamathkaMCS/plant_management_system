@@ -113,17 +113,18 @@
                     $Watered = $row["watering"];
                     $plantId = $row["plantId"];
                     $currentTime = new DateTime();
-                    $lastWateredTime = new DateTime($Watered);
+                    $lastWateredTime =new DateTime($Watered);
+                    $forLocalStorage = date("Y-m-d H:i:s", strtotime($row["watering"]));
                     $interval = $currentTime->diff($lastWateredTime);
 
                     if ($interval->h >= 24 || $interval->days > 0){
                         ?>
-                        <div class="waterDiv"><img src="images/to_water.png" class="wateredStatus"><button class="toWaterbutton" data-plantid='<?php echo $row['plantId']; ?>'><?php echo $row["plantName"]; ?></button>
+                        <div class="waterDiv"><img src="images/to_water.png" class="wateredStatus"><button class="toWaterbutton" data-previous='<?php echo $forLocalStorage; ?>' data-plantid='<?php echo $row['plantId']; ?>'><?php echo $row["plantName"]; ?></button>
                         </div>
                         <?php   
                     }else{
                         ?>
-                        <div class="waterDiv"><img src="images/watered.png" class="wateredStatus"><button  class="wateredButton"><?php echo $row["plantName"];?></button></div>
+                        <div class="waterDiv"><img src="images/watered.png" class="wateredStatus"><button  class="wateredButton" data-plantid='<?php echo $row['plantId']; ?>'><?php echo $row["plantName"];?></button></div>
                         <?php 
                     }
                 }

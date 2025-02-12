@@ -2,7 +2,7 @@
     require_once 'includes/conn.inc.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['plantId']) && isset($_POST['waterDateTime'])) {
+    if (isset($_POST['plantId']) && isset($_POST['waterDateTime'])){
         $plantId = $_POST['plantId'];  
         $waterDateTime = $_POST['waterDateTime'];
         $sql = "UPDATE plant_inventory SET watering = ? WHERE plantId = ?";
@@ -14,7 +14,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         mysqli_stmt_bind_param($stmt,"si",$waterDateTime, $plantId);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
-    } else {
-        echo "Missing plant ID or date-time!";
     }
 }
+else{
+        echo "Missing plant ID or date-time!";
+    }
+

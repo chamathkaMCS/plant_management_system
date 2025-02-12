@@ -73,14 +73,15 @@
         
                 if(mysqli_num_rows($result)==0){
         ?>
-                    <h1 style="margin:auto;font-size:50px;color:rgb(178, 192, 180);font-family:Arial;margin-top:30vh"> No Results Available</h1>
-                    <?php
+                <h1 style="margin:auto;font-size:50px;color:rgb(178, 192, 180);font-family:Arial;margin-top:30vh"> No Results Available</h1>
+            <?php
         }elseif (mysqli_num_rows($result)>0) { 
             if (isset($_SESSION["adminId"])) {
             ?>
             <a class="Card" href="add_customer.php">
             <img src="images/add_icon.png" style="width:150px;height:150px;margin:auto;align-content:center;">
-            </a><?php}
+            </a><?php
+            }
             while($row=mysqli_fetch_array($result)){
             ?>
             <div class="Card"><a style="width:100%;height:100%;"href="customer_profile.php?customerId=<?php echo urlencode($row['customerId']); ?>">

@@ -17,7 +17,7 @@ function closePanel() {
     document.getElementById("navigationPanel").className = "form-closed";
   }
 
-document.querySelectorAll(".toWaterbutton").forEach(button => {
+document.querySelectorAll("#toWaterbutton").forEach(button => {
   button.addEventListener("click", function() {
         let previous = this.dataset.previous;
         let plantid = this.dataset.plantid;
@@ -35,7 +35,7 @@ document.querySelectorAll(".toWaterbutton").forEach(button => {
         .catch(error => console.error("Error:", error)); 
     });
 });
-document.querySelectorAll(".wateredButton").forEach(button => {
+document.querySelectorAll("#wateredButton").forEach(button => {
     button.addEventListener("click", function() {
           let plantid = this.dataset.plantid;
           let prevDate =localStorage.getItem("plantID"+ plantid);

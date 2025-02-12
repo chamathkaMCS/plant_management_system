@@ -52,8 +52,11 @@ if (isset($_POST["create"])){
     $invalidUsername = invalidUsername($adminUsername);
     $passwordDosentMatch = passwordDosentMatch($password,$passwordRepeat);
 
+    $passwordHashed = $adminExists["adminPassword"];
+    $passwordCheck = password_verify($password,$passwordHashed);
+
     if($adminExists === false){
-        header("Location:../.php?error=userdoesntExists");
+        header("Location:../adminRegister.php?error=userdoesntExists");
         exit;
     }elseif($adminRegisterEmpty !== false){
         header("Location:../adminRegister.php?error=emptyInputs");
@@ -67,9 +70,13 @@ if (isset($_POST["create"])){
     }elseif($passwordDosentMatch !== false){
         header("Location:../adminRegister.php?error=passwordDosentMatch");
         exit;
+    }if($passwordCheck === false){
+        header("Location:../adminRegister.php?error=wrongPassword");
+        exit;
+    }else if($passwordCheck === true){
+        deleteAdmin($conn,$companyUserid,$adminUsername,$password);
     }
-    deleteAdmin($conn,$companyUserid,$adminUsername,$password);
-}
+    }
 else{
     header('Location:../adminRegister.php');
     exit;

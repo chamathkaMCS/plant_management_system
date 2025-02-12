@@ -4,7 +4,7 @@
     include_once 'footer.php';?>
 <body class="body-style-1">
 <?php
-if(isset($_SESSION["adminId"])){
+if(isset($_POST["buttonClicked"])){
 ?>
 <div style="margin-top:350px;">
     <h1 class="no1" style="font-size:50px;margin-top:-90px;">Enter Your </h1>
@@ -25,26 +25,34 @@ if(isset($_SESSION["adminId"])){
                     if($_GET["error"] == "emptyInputs"){
                         echo '<div class="error"> Fill all the Fields</div>';
                     }elseif($_GET["error"] == "invalidEmail"){
-                        echo '<div class="error"> invalid Email</div>';
+                        echo '<div class="error"> Invalid Email</div>';
                     }elseif($_GET["error"] == "invalidUsername"){
-                        echo '<div class="error"> invalid username </div>';
+                        echo '<div class="error"> Invalid username </div>';
                     }elseif($_GET["error"] == "userExists"){
                         echo '<div class="error"> Email or username already exists</div>';
                     }elseif($_GET["error"] == "passwordDosentMatch"){
                         echo '<div class="error"> password doesn\'t match </div>';
                     }elseif($_GET["error"] == "loginSuccessfully"){
                         echo '<div class="done"> Login Successfully </div>';
-                    }elseif($_GET["error"] == "stmtFailed"){
-                        echo '<div class="done"> Connection Failed </div>';
+                        //delete errors
+                    }elseif($_GET["error"] == "userdoesntExists"){
+                        echo '<div class="error"> User doesnt Exists </div>';
+                    }}elseif($_GET["error"] == "invalidEmail"){
+                        echo '<div class="error"> Invalid Email  </div>';
+                    }elseif($_GET["error"] == "invalidUsername"){
+                        echo '<div class="error"> Invalid Email </div>';
+                    }elseif($_GET["error"] == "wrongPassword"){
+                        echo '<div class="error"> Check the Password </div>';
                     }
-                }
+                
             ?>
         </form>
     </div>
     </div>
 </div>
 <?php
-}else{
+}
+else{
     echo'<h1 style="margin:auto;font-size:50px;color:rgb(178, 192, 180);font-family:Arial;margin-top:40vh"> 404 Page Not Found ! </h1>';
     exit();
 }

@@ -1,26 +1,22 @@
 <?php
 if (isset($_POST["submit"])){
-        $companyName = $_POST["customerName"];
-        $companyEmail = $_POST["customerEmail"];
-        $companyUsername = $_POST["contactNo"];
-        $password = $_POST["address"];
-        $repeatPassword = $_POST["nId"];
-        $repeatPassword = $_POST["gender"];
-        $repeatPassword = $_POST["gender"];
-
+        $companyUserid = $_SESSION["userid"];
+        $customerName = $_POST["customerName"];
+        $customerEmail = $_POST["customerEmail"];
+        $contactNo = $_POST["contactNo"];
+        $address = $_POST["address"];
+        $nId = $_POST["nId"];
+        $gender = $_POST["gender"];
 
         require_once 'conn.inc.php';
         require_once 'functions.inc.php';
 
-        $signUpEmpty = signUpEmptyCheck($companyName,$companyEmail,$companyUsername,$password,$repeatPassword);
-        $invalidEmail = invalidEmail($companyEmail);
-        $invalidUsername = invalidUsername($companyUsername);
-        $userExists = userExists($conn,$companyEmail,$companyUsername);
-        $passwordDosentMatch = passwordDosentMatch($password,$repeatPassword);
+        $detailsEmpty = detailsEmptyCheck($customerName,$customerEmail,$contactNo,$address,$nId,$gender);
+        $invalidEmail = invalidEmail($customerEmail);
 
 
-        if($signUpEmpty !== false){
-            header("Location:../signUp.php?error=emptyInputs");
+        if($detailsEmpty !== false){
+            header("Location:../add_customer.php?error=emptyInputs");
             exit;
         }elseif($invalidEmail !== false){
             header("Location:../signUp.php?error=invalidEmail");
@@ -35,9 +31,9 @@ if (isset($_POST["submit"])){
             header("Location:../signUp.php?error=passwordDosentMatch");
             exit;
         }
-        createUser($conn,$companyName,$companyEmail,$companyUsername,$password,$repeatPassword);
+        // createCustomer($conn,$companyName,$companyEmail,$companyUsername,$password,$repeatPassword);
 }
 else{
-    header('Location:../signIn.php');
+    header('Location: ../' . $_SESSION["current_page"] . '.php');
     exit;
 } 

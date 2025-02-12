@@ -88,7 +88,13 @@
         padding: 70px 0;
         text-align: center;
         color:rgb(255, 255, 255);
-        
+    }
+    .backButton{
+        position: absolute;
+        width:40px;
+        height:40px;
+        top:30px;
+        left:25px;
     }
     .holder{
         display: flex;
@@ -169,15 +175,13 @@
         font-size:120px;
         font-family:roboto;
         color:rgb(21, 143, 7);
-        margin:auto;
-        padding-top:10px;
+        margin-bottom:0px;
         width:100%;
     }
     .time{
         font-size:40px;
         font-family:roboto;
         margin:auto;
-        padding-top:10px;
         width:100%;
     }
     .day{
@@ -185,36 +189,31 @@
         font-family:roboto;
         color:rgb(21, 143, 7);
         margin:auto;
-        padding-top:10px;
         width:100%;
     }
     .toWaterbutton{
         position:relative;
+        display:flex;
         color:rgb(255, 255, 255);;
         background-color:rgb(21, 143, 7);
         border-radius:0px 0px 5px 5px;
-        outline:none;
-        border:0;
-        cursor: pointer;
         font-size:14px;
+        align-items:center;
+        justify-content:center;
         width: 100%;
         height:25px;
-        margin:auto;
-        margin-bottom:0;
     }
     .wateredButton{
         position:relative;
+        display:flex;
         color:rgb(255, 255, 255);;
         background-color:rgb(89, 91, 216);
         border-radius:0px 0px 5px 5px;
-        outline:none;
-        border:0;
-        cursor: pointer;
         font-size:14px;
+        align-items:center;
+        justify-content:center;
         width: 100%;
         height:25px;
-        margin:auto;
-        margin-bottom:0;
     }
     .wateredStatus{
         min-width: 80%;
@@ -225,6 +224,8 @@
     }
     .waterDiv{
         display:flex;
+        cursor: pointer;
+        font-size:14px;
         min-width:100px;
         align-self:flex-end;
         align-items:flex-end;
@@ -232,15 +233,17 @@
         flex-wrap:wrap;
         margin-bottom:10px;
         margin-left:10px;
+        padding:0px;
         border-radius:5px;
+        border:none;
         background-color:rgb(255, 255, 255);
         box-shadow: 1px 1px 20px rgb(197, 206, 255);
         width:100px;
         height:120px;
+        transition:all 1s ease;
     }
-    .toWater:hover{
-        transform:scale(1.05);
-        transition:all 0.2s ease;
+    .waterDiv:hover{
+        transform:scale(1.1);
     }
     .fill-div {
         display: block;

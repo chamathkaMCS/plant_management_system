@@ -5,7 +5,7 @@
     include_once 'footer.php';
     include_once 'adminLoginStatus.php';
     include_once 'navigationPanel.php';
-    $_SESSION['current_page'] = "home.php";
+    $_SESSION['current_page'] = "home";
     ?>
 
 <body class="body-style-1">
@@ -32,6 +32,7 @@
             while($row=mysqli_fetch_array($result)){
             ?>
         <a class="cards" href="plant_profile.php?plantId=<?php echo urlencode($row['plantId']); ?>">
+            <h1 class="date" style="font-size:40px;margin-top:20px;"><?php echo date("M", strtotime($row["fertilization"])); ?></h1>  
             <h1 class="date"><?php echo date("d", strtotime($row["fertilization"])); ?></h1>
             <h1 class="time"><?php echo date("H:i", strtotime($row["fertilization"])); ?> PM</h1>
             <h1 class="day"><?php echo date("l", strtotime($row["fertilization"])); ?><h3>
@@ -56,6 +57,7 @@
             while($row=mysqli_fetch_array($result) ){
     ?>
         <a class="cards" href="plant_profile.php?plantId=<?php echo urlencode($row['plantId']); ?>">
+            <h1 class="date" style="font-size:40px;margin-top:20px;"><?php echo date("M", strtotime($row["maintenance"])); ?></h1>
             <h1 class="date"><?php echo date("d", strtotime($row["maintenance"])); ?></h1>
             <h1 class="time"><?php echo date("H:i", strtotime($row["maintenance"])); ?> PM</h1>
             <h1 class="day"><?php echo date("l", strtotime($row["maintenance"])); ?><h3>
@@ -80,6 +82,7 @@
             while($row=mysqli_fetch_array($result) ){
         ?>
         <a class="cards" href="plant_profile.php?plantId=<?php echo urlencode($row['plantId']); ?>">
+            <h1 class="date" style="font-size:40px;margin-top:20px;"><?php echo date("M", strtotime($row["protection"])); ?></h1>
             <h1 class="date"><?php echo date("d", strtotime($row["protection"])); ?></h1>
             <h1 class="time"><?php echo date("H:i", strtotime($row["protection"])); ?> PM</h1>
             <h1 class="day"><?php echo date("l", strtotime($row["protection"])); ?><h3>
@@ -119,12 +122,12 @@
 
                     if ($interval->h >= 24 || $interval->days > 0){
                         ?>
-                        <div class="waterDiv"><img src="images/to_water.png" class="wateredStatus"><button class="toWaterbutton" data-previous='<?php echo $forLocalStorage; ?>' data-plantid='<?php echo $row['plantId']; ?>'><?php echo $row["plantName"]; ?></button>
-                        </div>
+                        <button id="toWaterbutton" class="waterDiv" data-previous='<?php echo $forLocalStorage; ?>' data-plantid='<?php echo $row['plantId']; ?>'><img src="images/to_water.png" class="wateredStatus"><div class="toWaterbutton" ><?php echo $row["plantName"]; ?></div>
+                    </button>
                         <?php   
                     }else{
                         ?>
-                        <div class="waterDiv"><img src="images/watered.png" class="wateredStatus"><button  class="wateredButton" data-plantid='<?php echo $row['plantId']; ?>'><?php echo $row["plantName"];?></button></div>
+                        <button id="wateredButton" class="waterDiv" data-plantid='<?php echo $row['plantId']; ?>' ><img src="images/watered.png" class="wateredStatus"><div  class="wateredButton" ><?php echo $row["plantName"];?></div></button>
                         <?php 
                     }
                 }

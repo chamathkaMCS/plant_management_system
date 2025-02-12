@@ -4,11 +4,11 @@
     include_once 'footer.php';
     ?>
 <body style="background-color:rgba(0, 0, 0, 0.27);">
-    <form action="includes/signUp.inc.php" method="post" class="popUpFormContainer">
+    <form action="includes/add_customer.inc.php" method="post" class="popUpFormContainer">
             <div style="background-color:rgba(211, 167, 22, 0);width:70%">
                 <div class="inputContainer" style="margin-top:50px;">
                     <label>Customer Name</label>
-                    <input type="text" id="customerName" name="compancustomerNameyName" placeholder="Customer Name">
+                    <input type="text" id="customerName" name="customerName" placeholder="Customer Name">
                 </div>
                 <div class="inputContainer">
                     <label>Customer Email</label>

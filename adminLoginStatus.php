@@ -16,9 +16,9 @@
                 </a>
                 </div>
             <div style="position:absolute;top:130px;right:200px">
-                <a href="adminRegister.php">
-                    <button class="adminAction">Create / Delete Admin</button>
-                </a>
+                <form action="adminRegister.php" method="post">
+                    <button type="submit" class="adminAction" name="buttonClicked">Create / Delete Admin</button>
+                </form>
             </div>
             HTML;
         }
@@ -40,9 +40,9 @@
     }elseif($companyAdminExists !== true ){
         echo <<<HTML
         <div style="position:absolute;top:130px;right:25px;">
-            <a href="adminRegister.php">
-                <button class="adminAction">Create Admin</button>
-            </a>
+            <form action="adminRegister.php" method="post">
+                    <button type="submit" class="adminAction" name="buttonClicked">Create Admin</button>
+                </form>
             </div>
         <div style="position:absolute;top:130px;right:200px">
             <a href="includes/logout.inc.php">

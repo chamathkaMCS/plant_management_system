@@ -1,5 +1,6 @@
 <?php
 if (isset($_POST["submit"])){
+        $adminId = $_SESSION["adminId"];
         $companyUserid = $_SESSION["userid"];
         $customerName = $_POST["customerName"];
         $customerEmail = $_POST["customerEmail"];
@@ -19,19 +20,10 @@ if (isset($_POST["submit"])){
             header("Location:../add_customer.php?error=emptyInputs");
             exit;
         }elseif($invalidEmail !== false){
-            header("Location:../signUp.php?error=invalidEmail");
-            exit;
-        }elseif($invalidUsername !== false){
-            header("Location:../signUp.php?error=invalidUsername");
-            exit;
-        }elseif($userExists !== false){
-            header("Location:../signUp.php?error=userExists");
-            exit;
-        }elseif($passwordDosentMatch !== false){
-            header("Location:../signUp.php?error=passwordDosentMatch");
+            header("Location:../add_customer.php?error=invalidEmail");
             exit;
         }
-        // createCustomer($conn,$companyName,$companyEmail,$companyUsername,$password,$repeatPassword);
+        createCustomer($conn,$companyUserid,$adminId,$customerName,$customerEmail,$contactNo,$address,$nId,$gender);
 }
 else{
     header('Location: ../' . $_SESSION["current_page"] . '.php');

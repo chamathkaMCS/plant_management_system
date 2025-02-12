@@ -37,8 +37,26 @@
                     <input type="submit" value="Add customer" name="submit" style="margin-bottom:50px;">
                 </div>
             </div>
-            <div style="background-color:rgba(6, 85, 26, 0);width:30%;display:flex;">
-                <div class="imageUpload"><img src="images/customer image.png"></div>
+            <div style="background-color:rgba(30, 211, 75, 0);width:30%;display:flex;flex-direction:column;">
+                <div style="width:100%;height:500px;flex-wrap:wrap;overflow:hidden;background-color:rgba(211, 178, 30, 0);">
+                    <div class="imageUpload" style="background-color:rgba(211, 30, 30, 0);">
+                        <img id="imagePreview" src="images/customer image.png" alt="Image Preview" style=" height:100%;display: block;">
+                        <img id="imagePreview" src="" alt="Image Preview" style=" height:100%;display: none;"></div>
+                </div>
+                <div style="width:100%;background-color:rgba(211, 30, 30, 0);padding-left:40px;">
+                <input type="file" id="imageUpload" name="image" accept="image/*" onchange="previewImage(event)">
+                </div>
+                <script>
+                    function previewImage(event) {
+                        var reader = new FileReader();
+                        reader.onload = function() {
+                            var output = document.getElementById('imagePreview');
+                            output.src = reader.result;
+                            output.style.display = "block"; // Show the image preview
+                        };
+                        reader.readAsDataURL(event.target.files[0]);
+                    }
+                </script>
             </div>
             <?php
                 if(isset($_GET["error"])){

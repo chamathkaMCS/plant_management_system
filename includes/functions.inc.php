@@ -219,4 +219,12 @@ function companyAdminExists($conn,$companyUserid){
     }
     mysqli_stmt_close($stmt);
 }
-
+function detailsEmptyCheck($customerName,$customerEmail,$contactNo,$address,$nId,$gender){
+    $result;
+    if(empty($customerName) || empty($customerEmail) || empty($contactNo) || empty($address) || empty($nId) || empty($gender)){
+        $result = true;
+    }else{
+        $result = false;
+    }
+    return $result;
+}

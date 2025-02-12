@@ -733,13 +733,16 @@
 .imageUpload{
     position:relative;
     display: flex;
-    margin:auto;
+    margin-top:75px;
+    margin-right:auto;
+    margin-left:auto;
+    align-items:flex-end;
     overflow: hidden;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0);
-    justify-content: center;
-    width:300px;
-    height:300px;
+    justify-content:center;
+    width:350px;
+    height:400px;
 }
 option{
     font-family:arial;

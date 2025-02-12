@@ -4,7 +4,7 @@
     include_once 'footer.php';?>
 <body class="body-style-1">
 <?php
-if(isset($_POST["buttonClicked"])){
+if(isset($_POST["buttonClicked"]) || isset($_SESSION["adminId"])){
 ?>
 <div style="margin-top:350px;">
     <h1 class="no1" style="font-size:50px;margin-top:-90px;">Enter Your </h1>
@@ -37,14 +37,14 @@ if(isset($_POST["buttonClicked"])){
                         //delete errors
                     }elseif($_GET["error"] == "userdoesntExists"){
                         echo '<div class="error"> User doesnt Exists </div>';
-                    }}elseif($_GET["error"] == "invalidEmail"){
+                    }elseif($_GET["error"] == "invalidEmail"){
                         echo '<div class="error"> Invalid Email  </div>';
                     }elseif($_GET["error"] == "invalidUsername"){
                         echo '<div class="error"> Invalid Email </div>';
                     }elseif($_GET["error"] == "wrongPassword"){
                         echo '<div class="error"> Check the Password </div>';
                     }
-                
+                }
             ?>
         </form>
     </div>

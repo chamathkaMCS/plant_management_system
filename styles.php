@@ -202,7 +202,7 @@
         margin:auto;
         margin-bottom:0;
     }
-    .wateredButon{
+    .wateredButton{
         position:relative;
         color:rgb(255, 255, 255);;
         background-color:rgb(89, 91, 216);

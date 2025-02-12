@@ -95,7 +95,6 @@
     <!-- watering blocks -->
     <h2 class="no5" style="color: blue;" >Watered Status</h2>
     <div class="homepageContainer02">
-    <button id="watered" onclick="watered()">test</button>
         <?php
             $companyUserid = $_SESSION["userid"];
             $query = "SELECT * FROM plant_inventory
@@ -111,21 +110,20 @@
             }elseif(mysqli_num_rows($result)>0){
                 while($row=mysqli_fetch_array($result)){
 
-                    $wateredTime = $row["watering"];
+                    $Watered = $row["watering"];
                     $plantId = $row["plantId"];
                     $currentTime = new DateTime();
-                    $wateredDateTime = new DateTime($wateredTime);
-                    $current_time = date("Y-m-d H:i:s");
-                    $interval = $currentTime->diff($wateredDateTime);
+                    $lastWateredTime = new DateTime($Watered);
+                    $interval = $currentTime->diff($lastWateredTime);
 
                     if ($interval->h >= 24 || $interval->days > 0){
                         ?>
-                        <div class="waterDiv"><img src="images/to_water.png" class="wateredStatus"><button id="watered" onclick="watered()" class="toWaterbutton"><?php echo $row["plantName"];?></button>
+                        <div class="waterDiv"><img src="images/to_water.png" class="wateredStatus"><button class="toWaterbutton" data-plantid='<?php echo $row['plantId']; ?>'><?php echo $row["plantName"]; ?></button>
                         </div>
                         <?php   
                     }else{
                         ?>
-                        <div class="waterDiv"><img src="images/watered.png" class="wateredStatus"><button  class="wateredButon"><?php echo $row["plantName"];?></button></div>
+                        <div class="waterDiv"><img src="images/watered.png" class="wateredStatus"><button  class="wateredButton"><?php echo $row["plantName"];?></button></div>
                         <?php 
                     }
                 }

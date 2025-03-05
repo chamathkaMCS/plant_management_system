@@ -44,7 +44,7 @@
                 </div>
             </div>
             </div>
-            <div style="background-color:rgba(143, 145, 40, 0);width:30%;display:flex;">
+            <div style="background-color:rgba(0, 0, 0, 0);width:30%;display:flex;">
                 <div class="imageUpload" style="margin-right:20px;";><img src="uploads/<?php echo $rowplant["plantImage"];?>.jpg"></div>
             </div>
             </div>
